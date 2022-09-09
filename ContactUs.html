@@ -1,0 +1,545 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    body {
+        background-color: black;
+        width: 100%;
+        /* font-family: Lato, Helvetica, sans-serif; */
+        font-family: "Lato";
+        src: url("Lato/Lato-Bold.ttf") format("truetype"),
+       url("Lato/Lato-Bold.ttf") format("truetype");
+
+
+    }
+
+    a {
+        text-decoration: none;
+    }
+
+    li {
+        list-style: none;
+    }
+
+    .navbar {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 20px;
+        background-color: Black;
+        color: #fff;
+        overflow: hidden;
+        position: fixed;
+        width: 100%;
+        top: 0;
+        z-index: 99;
+
+    }
+
+    .nav-links a {
+        color: #fff;
+    }
+
+    /* LOGO */
+    .img {
+        height: 100px;
+    }
+
+    /* NAVBAR MENU */
+    .menu {
+        display: flex;
+        gap: 1em;
+        font-size: 18px;
+    }
+
+    .menu li:hover {
+        background-color: #4c9e9e;
+        border-radius: 5px;
+        transition: 0.3s ease;
+        list-style: none;
+        text-decoration: none;
+    }
+
+    .menu li {
+        padding: 5px 14px;
+    }
+
+    /* DROPDOWN MENU */
+    .services {
+        position: relative;
+    }
+
+    .dropdown {
+        background-color: rgb(1, 139, 139);
+        padding: 1em 0;
+        position: absolute;
+        /*WITH RESPECT TO PARENT*/
+        display: none;
+        border-radius: 8px;
+        top: 35px;
+    }
+
+    .dropdown li+li {
+        margin-top: 10px;
+    }
+
+    .dropdown li {
+        padding: 0.5em 1em;
+        width: 8em;
+        text-align: center;
+    }
+
+    .dropdown li:hover {
+        background-color: #4c9e9e;
+    }
+
+    .services:hover .dropdown {
+        display: block;
+    }
+
+    input[type=checkbox] {
+        display: none;
+    }
+
+    /*HAMBURGER MENU*/
+    .hamburger {
+        display: none;
+        font-size: 24px;
+        user-select: none;
+    }
+
+    APPLYING MEDIA QUERIES
+@media (max-width: 768px) {
+  a {
+ text-decoration: none;
+}
+li {
+ list-style: none;
+}
+.menu { 
+ display:none;
+ position:fixed;
+ background-color:black;
+ right: 0;
+ left: 0;
+ 
+ height:100%;
+ text-align: center;
+ 
+}
+.menu li:hover {
+ display: inline-block;
+ background-color:#4c9e9e;
+ transition: 0.3s ease;
+}
+.menu li + li {
+ margin-top: 12px;
+}
+input[type=checkbox]:checked ~ .menu{
+ display: block;
+}
+.hamburger {
+ display: block;
+}
+.dropdown {
+ left: 50%;
+ top: 30px;
+ transform: translateX(35%);
+}
+.dropdown li:hover {
+ background-color: #4c9e9e;
+}
+}
+
+    .sub-div {
+        color: white;
+        position: absolute;
+        top: 150px;
+        left: 120px;
+    }
+
+    .sub-div p {
+        font-size: 50px;
+        left: 5px;
+        position: relative;
+        margin-top: 10px;
+
+    }
+
+    .inputbox {
+        height: 50px;
+        width: 500px;
+        background-color: #2E2E2E;
+        border-radius: 10px;
+        margin-top: 20px;
+        border: none;
+        padding-left: 20px;
+        font-size: 20px;
+        color: white;
+
+
+    }
+
+
+    .sub-d {
+        position: absolute;
+        margin-top: -50px;
+    }
+
+    .btns {
+        font-size: 25px;
+        background-color: black;
+        color: white;
+        border: 1px solid white;
+    }
+
+    .inputb {
+        height: 100px;
+        width: 500px;
+        background-color: #2E2E2E;
+        border-radius: 10px;
+        margin-top: 20px;
+        border: none;
+        padding-left: 20px;
+        font-size: 20px;
+        color: white;
+    }
+
+    .btns {
+        height: 70px;
+        width: 500px;
+        border-radius: 5px;
+        margin-top: -20px;
+    }
+
+    .location {
+        height: 220px;
+        width: 180px;
+        background-color: #2E2E2E;
+        border-radius: 12px;
+        font-size: 10px;
+        position: absolute;
+        top: 200px;
+        right: -350px;
+    }
+
+    .loc {
+        position: absolute;
+        /* margin-top: 20px; */
+        padding-top: 39px   ;
+        margin-left: 75px;
+
+        height: 80px;
+    }
+
+    .location pre {
+        /* margin-top: 100px; */
+        padding-top: 111px;
+        font-size: 10px;
+    }
+
+    .email {
+
+        height: 100px;
+        width: 230px;
+        background-color: #2E2E2E;
+        border-radius: 12px;
+        font-size: 10px;
+        position: absolute;
+        top: 200px;
+        right: -600px;
+        padding-left: 5px;
+    }
+
+    .eml {
+        position: absolute;
+        margin-top: 40px;
+        /* padding-left: 40px; */
+        padding-left: 21px;
+        
+       
+    }
+
+    .email h3 {
+        margin-top: 45px;
+        margin-left: 50px;
+    }
+
+    .conatctnum {
+        height: 100px;
+        width: 230px;
+        background-color: #2E2E2E;
+        border-radius: 12px;
+        position: absolute;
+        font-size: 10px;
+        top: 320px;
+        right: -600px;
+        padding-left: 40px;
+    }
+
+    .conatctnum h3 {
+        margin-top: 45px;
+        margin-left: 45px;
+    }
+
+    .phn {
+        position: relative;
+        /* margin-top: 40px; */
+        padding-top: 38px;
+        left: -10px;
+
+       
+    }
+
+    /* ////////////for deckstop responsive////////////////////// */
+    @media screen and (min-width:1900px) {
+        .top-links li p a {
+            font-size: 33px;
+
+        }
+
+        .sub-div {
+            padding-top: 80px;
+        }
+
+        .sub-div p {
+            font-size: 65px;
+            font-weight: bold;
+        }
+
+        .inputbox {
+            height: 80px;
+            width: 750px;
+            font-size: 30px;
+            margin-top: 40px;
+        }
+
+        .inputb {
+            height: 120px;
+            width: 750px;
+            margin-top: 40px;
+            font-size: 30px;
+            color: white;
+        }
+
+        .btns {
+            height: 80px;
+            width: 700px;
+            margin-top: 10px;
+        }
+
+        .maincontact {
+            position: relative;
+            right: -250px;
+            top: -150px;
+        }
+
+        .loc {
+            position: absolute;
+            margin-top: 20px;
+            margin-left: 130px;
+        }
+
+        .location {
+            height: 310px;
+            width: 280px;
+            background-color: #2E2E2E;
+            border-radius: 10px;
+            font-size: 10px;
+            position: absolute;
+            top: 200px;
+            right: -350px;
+        }
+
+        .location pre {
+            margin-top: 100px;
+            font-size: 15px;
+
+
+        }
+
+        .email {
+
+            height: 150px;
+            width: 30px;
+            background-color: #2E2E2E;
+            border-radius: 10px;
+            font-size: 18px;
+            position: absolute;
+            top: 200px;
+            right: -700px;
+            padding-left: 10px;
+        }
+
+        .eml {
+            position: absolute;
+            margin-top: 65px;
+            margin-left: 10px;
+        }
+
+        .email h3 {
+            margin-top: 65px;
+            margin-left: 50px;
+            font-size: 15px;
+        }
+
+
+        .conatctnum {
+            height: 150px;
+            width: 330px;
+            background-color: #2E2E2E;
+            border-radius: 10px;
+            position: absolute;
+            font-size: 18px;
+            top: 360px;
+            right: -700px;
+            padding-left: 10px;
+        }
+
+        .conatctnum h3 {
+            margin-top: 75px;
+            margin-left: 45px;
+        }
+
+        .phn {
+            position: absolute;
+            margin-top: 70px;
+            margin-left: 10px;
+        }
+    }
+    /* for tablet  */
+    @media screen and (min-width:481px) and (max-width:768px){
+        .top-links{
+         position: relative;
+         right: -480px;
+        }
+        .sub-div {
+            padding-top: 80px;
+        }
+      
+        .sub-div p {
+       font-weight: bold;
+       position: relative;
+       left: -5px;
+        }
+        .maincontact{
+          position: relative;
+          right: 120px;
+          top: -200px;
+           
+        }
+    }
+    @media screen and (min-width:769px) and (max-width:1024px){
+        .top-links{
+         position: relative;
+         right: -500px;
+        }
+        .sub-div {
+            padding-top: 100px;
+        }
+        .maincontact{
+          position: relative;
+          right: -50px;
+          top: -200px;
+           
+        } 
+    }
+</style>
+
+<body>
+
+    <div class="main">
+        <nav class="navbar">
+            <!-- LOGO -->
+            <div class="logo"><a href="front.html"> <img class="img" src="new images/logo.png"></a></div>
+            <!-- NAVIGATION MENU -->
+            <ul class="nav-links">
+                <!-- USING CHECKBOX HACK -->
+                <input type="checkbox" id="checkbox_toggle" />
+                <label for="checkbox_toggle" class="hamburger">&#9776;</label>
+                <!-- NAVIGATION MENUS -->
+                <div class="menu" style="font-size: 18px;    font-weight: bold;">
+                    <li><a href="ourservice5.html">Service</a></li>
+                    <li><a href="work1.html">Work</a></li>
+                    <li class="services">
+                        <a href="/">Blog</a>
+                        <!-- DROPDOWN MENU -->
+                        <ul class="dropdown">
+                        </ul>
+                    </li>
+                    <li><a href="aboutus1.html">About Us</a></li>
+                    <li><a href="ContactUs.html">Contact Us</a></li>
+                </div>
+            </ul>
+    </div>
+    <div class="sub-div">
+        <div>
+            <p style="cursor: context-menu; font-size: 45px;"  >
+                Let's go beyond the Etc!
+            </p><br><br><br>
+            <div class="sub-d">
+                <input style="cursor: context-menu ;font-size: 18px;" type="text" placeholder="Name" class="inputbox"><br>
+                <input style="cursor: context-menu ;font-size: 18px;" type="text" placeholder="Email" class="inputbox"><br>
+                <input style="cursor: context-menu ;font-size: 18px;" type="text" placeholder="Contact No" class="inputbox"><br>
+                <input style="cursor: context-menu ;font-size: 18px;" type="text" placeholder="Leave a massage" class="inputb"><br>
+                <br><br>
+                <div>
+                    <a href=""><button style="cursor: pointer;font-size: 24px;" class="btns">Submit</button></a>
+                </div>
+            </div>
+
+        </div>
+        <div>
+            <div class="maincontact">
+                <div class="location">
+                    <a href="https://www.google.com/maps/place/ExperientialEtc/@19.1768781,72.8340009,17z/data=!3m1!4b1!4m5!3m4!1s0x3be7b74acf05386d:0xf3b902803bc296f6!8m2!3d19.176873!4d72.8361896    ">
+                    <img class="loc" src="new images/location.png" alt="">
+                </a>
+                    <!-- <pre style="cursor: context-menu;font-size: 8px; ">       Unit nu.3B,Goldline business <br>
+     center opposite cafe cofee day,<br>
+        new link road,malad west,<br>
+                 Mumbai  <br>
+                  40064
+            </pre> -->
+            <div class="address" style="text-align: center; padding:100px 5px ;font-size:12px;cursor: context-menu;line-height:1.5em">
+                Unit no.3B,Goldline business
+                center opposite cafe cofee day,
+                new link road,malad west,
+                           <br> Mumbai  
+                            <br> 40064  
+            </div>
+                </div>
+                <div class="email">
+                    <img class="eml" src="new images/email.png" alt="">
+                    <h3 style="cursor: context-menu;font-size: 12px ; padding-left: 5px; position: relative;top: -2px;">contact@experientialetc.com</h3>
+                </div>
+                <div class="conatctnum">
+                    <img onclick="myFunction()"class="phn" src="new images/telephone.png" alt="">
+                    <h3 style="cursor: context-menu;font-size: 12px; position: relative;left: -15px; top: -70px;">+91 9820032280</h3>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <script>
+        function myFunction() {
+          var myWindow = window.open("", "MsgWindow", "width=200,height=100");
+          myWindow.document.write("<p>you can call any time on this number XXXXXXXXXX</p>");
+        }
+        </script>
+</body>
+
+</html>

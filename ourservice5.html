@@ -1,0 +1,1084 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    * {
+        padding: 0px;
+        margin: 0px;
+        box-sizing: border-box;
+        /* font-family: Lato, Helvetica, sans-serif; */
+        font-family: "Lato";
+        src: url("Lato/Lato-Bold.ttf") format("truetype"),
+       url("Lato/Lato-Bold.ttf") format("truetype");
+    }
+
+    body {
+        background-color: black;
+    }
+
+    .container {
+        background-color: black;
+        color: white;
+    }
+
+    .container h1 {
+        font-weight: bold;
+        font-size: 50px;
+    }
+
+    .container h3 {
+        padding-top: 15px;
+        font-size: 20px;
+        font-weight: lighter;
+        color: rgb(185, 184, 184);
+
+    }
+
+    /* ////////////navbar//////////////////////// */
+    a {
+        text-decoration: none;
+    }
+
+    li {
+        list-style: none;
+    }
+
+    .navbar {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 20px;
+        background-color: Black;
+        color: #fff;
+        overflow: hidden;
+        /* position:fixed; */
+        width: 100%;
+        top: 0;
+        z-index: 99;
+
+    }
+
+    .nav-links a {
+        color: #fff;
+    }
+
+    /* LOGO */
+
+    /* NAVBAR MENU */
+    .menu {
+        display: flex;
+        gap: 1em;
+        font-size: 18px;
+    }
+
+    .menu li:hover {
+        background-color: #4c9e9e;
+        border-radius: 5px;
+        transition: 0.3s ease;
+        list-style: none;
+        text-decoration: none;
+    }
+
+    .menu li {
+        padding: 5px 14px;
+    }
+
+    /* DROPDOWN MENU */
+    .services {
+        position: relative;
+    }
+
+    .dropdown {
+        background-color: rgb(1, 139, 139);
+        padding: 1em 0;
+        position: absolute;
+        /*WITH RESPECT TO PARENT*/
+        display: none;
+        border-radius: 8px;
+        top: 35px;
+    }
+
+    .dropdown li+li {
+        margin-top: 10px;
+    }
+
+    .dropdown li {
+        padding: 0.5em 1em;
+        width: 8em;
+        text-align: center;
+    }
+
+    .dropdown li:hover {
+        background-color: #4c9e9e;
+    }
+
+    .services:hover .dropdown {
+        display: block;
+    }
+
+    input[type=checkbox] {
+        display: none;
+    }
+
+    /*HAMBURGER MENU*/
+    .hamburger {
+        display: none;
+        font-size: 24px;
+        user-select: none;
+    }
+
+    /* APPLYING MEDIA QUERIES */
+    @media (max-width: 768px) {
+        a {
+            text-decoration: none;
+        }
+
+        li {
+            list-style: none;
+        }
+
+        .menu {
+            display: none;
+            position: fixed;
+            background-color: black;
+            right: 0;
+            left: 0;
+
+            height: 100%;
+            text-align: center;
+
+        }
+
+        .menu li:hover {
+            display: inline-block;
+            background-color: #4c9e9e;
+            transition: 0.3s ease;
+        }
+
+        .menu li+li {
+            margin-top: 12px;
+        }
+
+        input[type=checkbox]:checked~.menu {
+            display: block;
+        }
+
+        .hamburger {
+            display: block;
+        }
+
+        .dropdown {
+            left: 50%;
+            top: 30px;
+            transform: translateX(35%);
+        }
+
+        .dropdown li:hover {
+            background-color: #4c9e9e;
+        }
+    }
+
+    /* /////////////////////////////////////////////// */
+
+    .content {
+        text-align: center;
+        padding-top: 0px;
+    }
+
+    .card-container {
+        padding-top: 90px;
+    }
+
+    .cards {
+        padding: 0px 70px;
+        display: flex;
+        flex-wrap: wrap;
+
+    }
+
+    .cards1 {
+        padding: 0px 120px;
+        display: flex;
+        flex-wrap: wrap;
+
+    }
+
+    .card1 {
+        height: 250px;
+        width: 200px;
+        background-color: #171717;
+        border-radius: 10px;
+        border: none;
+        margin: 20px 20px;
+
+    }
+
+    .card2 {
+        height: 250px;
+        width: 200px;
+        background-color: #171717;
+        border-radius: 10px;
+        border: none;
+        margin: 20px 20px;
+    }
+
+    .card3 {
+        height: 250px;
+        width: 200px;
+        background-color: #171717;
+        border-radius: 10px;
+        border: none;
+        margin: 20px 20px;
+    }
+
+    .card4 {
+        height: 250px;
+        width: 200px;
+        background-color: #171717;
+        border-radius: 10px;
+        border: none;
+        margin: 20px 20px;
+    }
+
+    .card5 {
+        height: 250px;
+        width: 200px;
+        background-color: #171717;
+        border-radius: 10px;
+        border: none;
+        margin: 20px 20px;
+    }
+
+    .card6 {
+        height: 250px;
+        width: 200px;
+        background-color: #171717;
+        border-radius: 10px;
+        border: none;
+        margin: 20px 20px;
+
+    }
+
+    .card7 {
+        height: 250px;
+        width: 200px;
+        background-color: #171717;
+        border-radius: 10px;
+        border: none;
+        margin: 20px 20px;
+    }
+
+    .card8 {
+        height: 250px;
+        width: 200px;
+        background-color: #171717;
+        border-radius: 10px;
+        border: none;
+        margin: 20px 20px;
+    }
+
+    .card9 {
+        height: 250px;
+        width: 200px;
+        background-color: #171717;
+        border-radius: 10px;
+        border: none;
+        margin: 20px 20px;
+    }
+
+    .card10 {
+        height: 250px;
+        width: 200px;
+        background-color: #171717;
+        border-radius: 10px;
+        border: none;
+        margin: 20px 20px;
+    }
+
+    .card11 {
+        height: 250px;
+        width: 200px;
+        background-color: #171717;
+        border-radius: 10px;
+        border: none;
+        margin: 20px 20px;
+    }
+
+    .card12 {
+        height: 250px;
+        width: 200px;
+        background-color: #171717;
+        border-radius: 10px;
+        border: none;
+        margin: 20px 20px;
+    }
+
+    .card13 {
+        height: 250px;
+        width: 200px;
+        background-color: #171717;
+        border-radius: 10px;
+        border: none;
+        margin: 20px 20px;
+    }
+
+    .card14 {
+        height: 250px;
+        width: 200px;
+        background-color: #171717;
+        border-radius: 10px;
+        border: none;
+        margin: 20px 20px;
+    }
+
+    .card15 {
+        height: 250px;
+        width: 200px;
+        background-color: #171717;
+        border-radius: 10px;
+        border: none;
+        margin: 20px 20px;
+    }
+
+    .card16 {
+        height: 250px;
+        width: 200px;
+        background-color: #171717;
+        border-radius: 10px;
+        border: none;
+        margin: 20px 20px;
+    }
+
+    .card17 {
+        height: 250px;
+        width: 200px;
+        background-color: #171717;
+        border-radius: 10px;
+        border: none;
+        margin: 20px 20px;
+    }
+
+    .card18 {
+        height: 250px;
+        width: 200px;
+        background-color: #171717;
+        border-radius: 10px;
+        border: none;
+        margin: 20px 20px;
+    }
+
+    .card19 {
+        height: 250px;
+        width: 200px;
+        background-color: #171717;
+        border-radius: 10px;
+        border: none;
+        margin: 20px 20px;
+    }
+
+    /* //////////cardds-content/////////////// */
+    .card-content1 {
+        /* text-align: center; */
+        padding-top: 50px;
+    }
+
+    .para1 {
+        padding-left: 20px;
+        /* padding-right: 10px; */
+        color: #7E7C73;
+        position: relative;
+        top: -30px;
+    }
+
+    .card-content2 {
+        /* text-align: center; */
+        padding-top: 50px;
+    }
+
+    .para2 {
+        padding-left: 20px;
+        color: #7E7C73;
+        position: relative;
+        top: -30px;
+    }
+
+    .card-content3 {
+        /* text-align: center; */
+        padding-top: 50px;
+    }
+
+    .para3 {
+        padding-left: 20px;
+        color: #7E7C73;
+        position: relative;
+        top: -30px;
+    }
+
+    .card-content4 {
+        /* text-align: center; */
+        padding-top: 50px;
+    }
+
+    .para4 {
+        padding-left: 20px;
+        color: #7E7C73;
+        position: relative;
+        top: -30px;
+    }
+
+    .card-content5 {
+        /* text-align: center; */
+        padding-top: 50px;
+    }
+
+    .para5 {
+        padding-left: 20px;
+        color: #7E7C73;
+        position: relative;
+        top: -30px;
+    }
+
+    .card-content6 {
+        /* text-align: center; */
+        padding-top: 50px;
+    }
+
+    .para6 {
+        padding-left: 20px;
+        color: #7E7C73;
+        position: relative;
+        top: -30px;
+    }
+
+    .card-content7 {
+        /* text-align: center; */
+        padding-top: 50px;
+    }
+
+    .para7 {
+        padding-left: 20px;
+        color: #7E7C73;
+        position: relative;
+        top: -30px;
+    }
+
+    .card-content8 {
+        /* text-align: center; */
+        padding-top: 50px;
+    }
+
+    .para8 {
+        padding-left: 20px;
+        color: #7E7C73;
+        position: relative;
+        top: -30px;
+    }
+
+    .card-content9 {
+        /* text-align: center; */
+        padding-top: 50px;
+    }
+
+    .para9 {
+        padding-left: 20px;
+        color: #7E7C73;
+        position: relative;
+        top: -30px;
+    }
+
+    .card-content10 {
+        /* text-align: center; */
+        padding-top: 50px;
+    }
+
+    .para10 {
+        padding-left: 20px;
+        color: #7E7C73;
+        position: relative;
+        top: -30px;
+    }
+
+    .card-content11 {
+        /* text-align: center; */
+        padding-top: 50px;
+    }
+
+    .para11 {
+        padding-left: 20px;
+        color: #7E7C73;
+        position: relative;
+        top: -30px;
+    }
+
+    .card-content12 {
+        /* text-align: center; */
+        padding-top: 50px;
+    }
+
+    .para12 {
+        padding-left: 20px;
+        color: #7E7C73;
+        position: relative;
+        top: -30px;
+    }
+
+    .card-content13 {
+        /* text-align: center; */
+        padding-top: 50px;
+    }
+
+    .para13 {
+        padding-left: 20px;
+        color: #7E7C73;
+        position: relative;
+        top: -30px;
+    }
+
+    .card-content14 {
+        /* text-align: center; */
+        padding-top: 50px;
+    }
+
+    .para14 {
+        padding-left: 20px;
+        color: #7E7C73;
+        position: relative;
+        top: -30px;
+    }
+
+    .card-content15 {
+        /* text-align: center; */
+        padding-top: 50px;
+    }
+
+    .para15 {
+        padding-left: 20px;
+        color: #7E7C73;
+        position: relative;
+        top: -30px;
+    }
+
+    .card-content16 {
+        /* text-align: center; */
+        padding-top: 50px;
+    }
+
+    .para16 {
+        padding-left: 20px;
+        color: #7E7C73;
+        position: relative;
+        top: -30px;
+    }
+
+    .card-content17 {
+        /* text-align: center; */
+        padding-top: 50px;
+    }
+
+    .para17 {
+        padding-left: 20px;
+        color: #7E7C73;
+        position: relative;
+        top: -30px;
+    }
+
+    .card-content18 {
+        /* text-align: center; */
+        padding-top: 50px;
+    }
+
+    .para18 {
+        padding-left: 20px;
+        color: #7E7C73;
+        position: relative;
+        top: -30px;
+    }
+
+    .card-content19 {
+        /* text-align: center; */
+        padding-top: 50px;
+    }
+
+    .para19 {
+        padding-left: 20px;
+        color: #7E7C73;
+        position: relative;
+        top: -30px;
+    }
+
+    /* Responsive Design */
+    @media screen and (min-width:481px) and (max-width:768px) {
+        .cards {
+            padding: 0px 20px;
+        }
+
+        .cards1 {
+            padding: 0px 0px;
+        }
+    }
+
+    @media screen and (min-width:769px) and (max-width:800px) {
+        /* .cards {
+            padding: 0px 120px;
+        }
+
+        .cards1 {
+            padding: 0px 0px;
+        } */
+        .cards {
+            padding: 0px 30px;
+        }
+    }
+    @media screen and (min-width:801px) and (max-width:850px) {
+        /* .cards {
+            padding: 0px 120px;
+        }
+
+        .cards1 {
+            padding: 0px 0px;
+        } */
+        .cards {
+            padding: 0px 30px;
+        }
+    }
+    @media screen and (min-width:851px) and (max-width:900px) {
+
+        .cards {
+            padding: 0px 60px;
+        }
+    }
+    @media screen and (min-width:901px) and (max-width:950px) {
+
+        .cards {
+            padding: 0px 100px;
+        }
+    }
+    @media screen and (min-width:951px) and (max-width:1000px) {
+
+        .cards {
+            padding: 0px 110px;
+        }
+    }
+    @media screen and (min-width:1001px) and (max-width:1024px) {
+
+        .cards {
+            padding: 0px 120px;
+        }
+    }
+ 
+
+    @media screen and (min-width:1025px) and (max-width:1100px) {
+        .cards {
+            padding: 0px 150px;
+        }
+
+        /* .cards1 {
+            padding: 0px 0px;
+        } */
+    }
+
+    @media screen and (min-width:1101px) and (max-width:1150px) {
+        .cards {
+            padding: 0px 180px;
+        }
+
+        .cards1 {
+            padding: 0px 0px;
+        }
+    }
+
+    @media screen and (min-width:1151px) and (max-width:1200px) {
+
+        .cards {
+            padding: 0px 210px;
+        }
+
+        .cards1 {
+            padding: 0px 0px;
+        }
+    }
+
+    @media screen and (min-width:1201px) and (max-width:1250px) {
+
+        .cards {
+            padding: 0px 0px;
+        }
+    }
+
+    @media screen and (min-width:1251px) and (max-width:1300px) {
+
+        .cards {
+            padding: 0px 25px;
+        }
+    }
+
+    @media screen and (min-width:1301px) and (max-width:1350px) {
+
+        .cards {
+            padding: 0px 50px;
+        }
+    }
+
+    @media screen and (min-width:1401px) and (max-width:1500px) {
+        .cards {
+            padding: 0px 90px;
+        }
+    }
+
+    @media screen and (min-width:1501px) and (max-width:1550px) {
+        .cards {
+            padding: 0px 150px;
+        }
+    }
+
+    @media screen and (min-width:1551px) and (max-width:1600px) {
+        .cards {
+            padding: 0px 170px;
+        }
+    }
+
+    @media screen and (min-width:1601px) and (max-width:1700px) {
+        .cards {
+            padding: 0px 200px;
+        }
+    }
+
+    @media screen and (min-width:1701px) and (max-width:1800px) {
+        .cards {
+            padding: 0px 250px;
+        }
+    }
+
+    @media screen and (min-width:1801px) and (max-width:1850px) {
+        .cards {
+            padding: 0px 300px;
+        }
+    }
+    @media screen and (min-width:1851px) and (max-width:1900px) {
+        .cards {
+            padding: 0px 300px;
+        }
+    }
+
+    @media screen and (min-width:1901px) and (max-width:1950px) {
+        .cards {
+            padding: 0px 350px;
+        }
+    }
+    @media screen and (min-width:1951px) and (max-width:2000px) {
+        .cards {
+            padding: 0px 370px;
+        }
+    }
+    @media screen and (min-width:2001px) and (max-width:2050px) {
+        .cards {
+            padding: 0px 390px;
+        }
+    }
+    @media screen and (min-width:2051px) and (max-width:2100px) {
+        .cards {
+            padding: 0px 420px;
+        }
+    }
+    @media screen and (min-width:2101px) and (max-width:2150px) {
+        .cards {
+            padding: 0px 450px;
+        }
+    }
+    @media screen and (min-width:2151px) and (max-width:2200px) {
+        .cards {
+            padding: 0px 440px;
+        }
+    }
+    @media screen and (min-width:2201px) and (max-width:2250px) {
+        .cards {
+            padding: 0px 500px;
+        }
+    }
+    @media screen and (min-width:2251px) and (max-width:2300px) {
+        .cards {
+            padding: 0px 520px;
+        }
+    }
+    @media screen and (min-width:2301px) and (max-width:2350px) {
+        .cards {
+            padding: 0px 540px;
+        }
+    }
+    @media screen and (min-width:2351px) and (max-width:2400px) {
+        .cards {
+            padding: 0px 540px;
+        }
+    }
+</style>
+
+<body>
+    <div class="main">
+        <nav class="navbar">
+            <!-- LOGO -->
+            <div class="logo"><a href="front.html"> <img class="img" src="new images/logo.png"></a></div>
+            <!-- NAVIGATION MENU -->
+            <ul class="nav-links">
+                <!-- USING CHECKBOX HACK -->
+                <input type="checkbox" id="checkbox_toggle" />
+                <label for="checkbox_toggle" class="hamburger">&#9776;</label>
+                <!-- NAVIGATION MENUS -->
+                <div class="menu" style="font-size: 18px;    font-weight: bold;">
+                    <li><a href="ourservice5.html">Service</a></li>
+                    <li><a href="work1.html">Work</a></li>
+                    <li class="services">
+                        <a href="/">Blog</a>
+                        <!-- DROPDOWN MENU -->
+                        <ul class="dropdown">
+                        </ul>
+                    </li>
+                    <li><a href="aboutus1.html">About Us</a></li>
+                    <li><a href="ContactUs.html">Contact Us</a></li>
+                </div>
+            </ul>
+    </div>
+    <div class="container">
+        <div class="content">
+            <h1 style="font-size: 45px;">Our Services</h1>
+            <h3 style="font-size: 21px; font-weight: lighter;">We help in building marketing roadmaps and designing & developing digital solutions for creating</h3>
+            <h3  style="font-size: 21px;">impactful communication for brands</h3>
+        </div>
+        <div class="card-container">
+            <div class="cards">
+                <div class="card1">
+                    <div class="card-content1">
+                        <img style="height: 90px; width:90px; position:relative;top:-20px; left: 55px;"
+                            src="./new images/Group 7347.png" alt="">
+                        <h3 style="text-align: center; position: relative;top:-20px ;font-size: 25px; cursor: context-menu; ">Instagram AR Filters</h3>
+                        <!-- <p class="para1">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Inventore quisquam
+                            nam sint beatae
+                            voluptate quae velit eaque. Incidunt</p> -->
+                        <img style="height:20px;width:20px;cursor: pointer; position:relative; left:90px ;top: 0px; "
+                            src="./new images/frd.jpg" alt="">
+                    </div>
+                </div>
+                <div class="card2">
+                    <div class="card-content2">
+                        <img style="height: 90px; width:90px; position:relative;top:-20px; left: 55px;"
+                            src="./new images/Group 7349.png" alt="">
+                        <h3 style="text-align: center; position: relative;top:-20px ;font-size: 25px;cursor: context-menu;  ">Web Ar Experiences</h3>
+                        <!-- <p class="para2 ">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Inventore quisquam
+                            nam sint beatae
+                            voluptate quae velit eaque. Incidunt</p> -->
+                        <img style="height:20px;width:20px;cursor: pointer; position:relative; left:90px ;top: 0px;"
+                            src="./new images/frd.jpg" alt="">
+                    </div>
+                </div>
+                <div class="card3">
+                    <div class="card-content3">
+                        <img style="height: 90px; width:90px; position:relative;top:-20px; left: 55px;"
+                            src="./new images/Group 7351.png" alt="">
+                        <h3 style="text-align: center; position: relative;top:-20px ;font-size: 25px;cursor: context-menu;  ">Snapchat Ar Lenses</h3>
+                        <!-- <p class="para3">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Inventore quisquam
+                            nam sint beatae
+                            voluptate quae velit eaque. Incidunt</p> -->
+                            <img style="height:20px;width:20px;cursor: pointer; position:relative; left:90px ;top: 0px; "
+                            src="./new images/frd.jpg" alt="">
+                    </div>
+                </div>
+                <div class="card4">
+                    <div class="card-content4">
+                        <img style="height: 90px; width:90px; position:relative;top:-20px; left: 55px;"
+                            src="./new images/Group 7347.png" alt="">
+                        <h3 style="text-align: center;padding-left: 10px; position: relative;top:-20px ;font-size: 25px;cursor: context-menu; ">Swipe Up Games</h3>
+                        <!-- <p class="para4">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Inventore quisquam
+                            nam sint beatae
+                            voluptate quae velit eaque. Incidunt</p> -->
+                            <img style="height:20px;width:20px;cursor: pointer; position:relative; left:90px ;top: 0px; "
+                            src="./new images/frd.jpg" alt="">
+                    </div>
+                </div>
+                <div class="card5">
+                    <div class="card-content5">
+                        <img style="height: 90px; width:90px; position:relative;top:-20px; left: 55px;"
+                            src="./new images/Group 7349.png" alt="">
+                        <h3 style="text-align: center;padding-left: 10px; position: relative;top:-20px ;font-size: 25px;cursor: context-menu; ">3D 360 Virtual Stores</h3>
+                        <!-- <p class="para5">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Inventore quisquam
+                            nam sint beatae
+                        </p> -->
+                        <img style="height:20px;width:20px;cursor: pointer; position:relative; left:90px ;top: 0px; "
+                        src="./new images/frd.jpg" alt="">
+                    </div>
+                </div>
+                <div class="card6">
+                    <div class="card-content6">
+                        <img style="height: 90px; width:90px; position:relative;top:-20px; left: 55px;"
+                            src="./new images/Group 7351.png" alt="">
+                        <h3 style="text-align: center; padding-left: 10px; position: relative;top:-20px ;font-size: 25px;cursor: context-menu; ">Interactive Videos</h3>
+                        <!-- <p class="para6">Through our Digital Fan Engagement for Brands, we can digitally engage the fan
+                            and create a fan moment for the one.</p> -->
+                            <img style="height:20px;width:20px;cursor: pointer; position:relative; left:90px ;top: 0px; "
+                            src="./new images/frd.jpg" alt="">
+                    </div>
+                </div>
+                <div class="card7">
+                    <div class="card-content7">
+                        <img style="height: 90px; width:90px; position:relative;top:-20px; left: 55px;"
+                            src="./new images/Group 7347.png" alt="">
+                        <h3 style="text-align: center;padding-left: 10px; position: relative;top:-20px ;font-size: 25px;cursor: context-menu; ">Ar Camera Filters</h3>
+                        <!-- <p class="para7">Showcase SuperEngaging Without the use of a glass, you may display holographic
+                            content in the air and make a large number of people aware of your product.</p> -->
+                            <img style="height:20px;width:20px;cursor: pointer; position:relative; left:90px ;top: 0px; "
+                            src="./new images/frd.jpg" alt="">
+                    </div>
+                </div>
+                <div class="card8">
+                    <div class="card-content8">
+                        <img style="height: 90px; width:90px; position:relative;top:-20px; left: 55px;"
+                            src="./new images/Group 7349.png" alt="">
+                        <h3 style="text-align: center; position: relative;top:-20px ;font-size: 25px;cursor: context-menu; ">Digital fan Engagement</h3>
+                        <!-- <p class="para8">The holonet is a highly reflective silver net that is essentially undetectable to the human eye; the projection that transpires on it appears to occur in mid-air.</p> -->
+                        <img style="height:20px;width:20px;cursor: pointer; position:relative; left:90px ;top: 0px; "
+                        src="./new images/frd.jpg" alt="">
+                    </div>
+                </div>
+                <div class="card9">
+                    <div class="card-content9">
+                        <img style="height: 90px; width:90px; position:relative;top:-20px; left: 55px;"
+                            src="./new images/Group 7351.png" alt="">
+                        <h3 style="text-align: center; position: relative;top:-20px ;font-size: 25px;cursor: context-menu; ">Holovsn</h3>
+                        <!-- <p class="para9">We design engaging virtual conferences to provide a seamless experience as well as engaging and fascinating conferences.</p> -->
+                        <img style="height:20px;width:20px;cursor: pointer; position:relative; left:90px ;top: 30px; "
+                        src="./new images/frd.jpg" alt="">
+                    </div>
+                </div>
+                <div class="card10">
+                    <div class="card-content10">
+                        <img style="height: 90px; width:90px; position:relative;top:-20px; left: 55px;"
+                            src="./new images/Group 7347.png" alt="">
+                        <h3 style="text-align: center; position: relative;top:-20px ;font-size: 25px;cursor: context-menu; ">Holonet</h3>
+                        <!-- <p class="para10">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Inventore quisquam
+                            nam sint beatae
+                            voluptate quae velit eaque. Incidunt</p> -->
+                            <img style="height:20px;width:20px;cursor: pointer; position:relative; left:90px ;top: 30px; "
+                            src="./new images/frd.jpg" alt="">
+                    </div>
+                </div>
+                <div class="card11">
+                    <div class="card-content11">
+                        <img style="height: 90px; width:90px; position:relative;top:-20px; left: 55px;"
+                            src="./new images/Group 7349.png" alt="">
+                        <h3 style="text-align: center; position: relative;top:-20px ;font-size: 25px;cursor: context-menu; ">Virtual Conference</h3>
+                        <!-- <p class="para11">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Inventore quisquam
+                            nam sint beatae
+                            voluptate quae velit eaque. Incidunt</p> -->
+                            <img style="height:20px;width:20px;cursor: pointer; position:relative; left:90px ;top: 0px; "
+                            src="./new images/frd.jpg" alt="">
+                    </div>
+                </div>
+                <div class="card12">
+                    <div class="card-content12">
+                        <img style="height: 90px; width:90px; position:relative;top:-20px; left: 55px;"
+                            src="./new images/Group 7351.png" alt="">
+                        <h3 style="text-align: center; position: relative;top:-20px ;font-size: 25px;cursor: context-menu; ">Blacklight</h3>
+                        <!-- <p class="para12">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Inventore quisquam
+                            nam sint beatae
+                            voluptate quae velit eaque. Incidunt</p> -->
+                            <img style="height:20px;width:20px;cursor: pointer; position:relative; left:90px ;top: 30px; "
+                            src="./new images/frd.jpg" alt="">
+                    </div>
+                </div>
+                <div class="card13">
+                    <div class="card-content13">
+                        <img style="height: 90px; width:90px; position:relative;top:-20px; left: 55px;"
+                            src="./new images/Group 7347.png" alt="">
+                        <h3 style="text-align: center; position: relative;top:-20px ;font-size: 25px;cursor: context-menu; ">Liveglass</h3>
+                        <!-- <p class="para13">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Inventore quisquam
+                            nam sint beatae
+                            voluptate quae velit eaque. Incidunt</p> -->
+                            <img style="height:20px;width:20px;cursor: pointer; position:relative; left:90px ;top: 30px; "
+                            src="./new images/frd.jpg" alt="">
+                    </div>
+                </div>
+                <div class="card14">
+                    <div class="card-content14">
+                        <img style="height: 90px; width:90px; position:relative;top:-20px; left: 55px;"
+                            src="./new images/Group 7349.png" alt="">
+                        <h3 style="text-align: center; position: relative;top:-20px ;font-size: 25px;cursor: context-menu; ">Holopyramid</h3>
+                        <!-- <p class="para14">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Inventore quisquam
+                            nam sint beatae
+                            voluptate quae velit eaque. Incidunt</p> -->
+                            <img style="height:20px;width:20px;cursor: pointer; position:relative; left:90px ;top: 30px; "
+                            src="./new images/frd.jpg" alt="">
+                    </div>
+                </div>
+                <div class="card15">
+                    <div class="card-content15">
+                        <img style="height: 90px; width:90px; position:relative;top:-20px; left: 55px;"
+                            src="./new images/Group 7351.png" alt="">
+                        <h3 style="text-align: center; position: relative;top:-20px ;font-size: 25px;cursor: context-menu; ">Digiplay</h3>
+                        <!-- <p class="para15">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Inventore quisquam
+                            nam sint beatae
+                            voluptate quae velit eaque. Incidunt</p> -->
+                            <img style="height:20px;width:20px;cursor: pointer; position:relative; left:90px ;top: 30px; "
+                            src="./new images/frd.jpg" alt="">
+                    </div>
+                </div>
+                <div class="cards1">
+                    <div class="card16">
+                        <div class="card-content16">
+                            <img style="height: 90px; width:90px; position:relative;top:-20px; left: 55px;"
+                                src="./new images/Group 7347.png" alt="">
+                            <h3 style="text-align: center; position: relative;top:-20px ;font-size: 25px;cursor: context-menu; ">Holomist</h3>
+                            <!-- <p class="para16">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Inventore
+                                quisquam nam sint beatae
+                                voluptate quae velit eaque. Incidunt</p> -->
+                                <img style="height:20px;width:20px;cursor: pointer; position:relative; left:90px ;top: 30px; "
+                                src="./new images/frd.jpg" alt="">
+                        </div>
+                    </div>
+                    <div class="card17">
+                        <div class="card-content17">
+                            <img style="height: 90px; width:90px; position:relative;top:-20px; left: 55px;"
+                                src="./new images/Group 7349.png" alt="">
+                            <h3 style="text-align: center; position: relative;top:-20px ;font-size: 25px;cursor: context-menu; ">Experiential Marketing</h3>
+                            <!-- <p class="para17">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Inventore
+                                quisquam nam sint beatae
+                                voluptate quae velit eaque. Incidunt</p> -->
+                                <img style="height:20px;width:20px;cursor: pointer; position:relative; left:90px ;top: 0px; "
+                                src="./new images/frd.jpg" alt="">
+                        </div>
+                    </div>
+                    <div class="card18">
+                        <div class="card-content18">
+                            <img style="height: 90px; width:90px; position:relative;top:-20px; left: 55px;"
+                                src="./new images/Group 7351.png" alt="">
+                            <h3 style="text-align: center; position: relative;top:-20px ;font-size: 25px;cursor: context-menu; ">BTL Activation</h3>
+                            <!-- <p class="para18">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Inventore
+                                quisquam nam sint beatae
+                                voluptate quae velit eaque. Incidunt</p> -->
+                                <img style="height:20px;width:20px;cursor: pointer; position:relative; left:90px ;top: 30px; "
+                                src="./new images/frd.jpg" alt="">
+                        </div>
+                    </div>
+                    <div class="card19">
+                        <div class="card-content19">
+                            <img style="height: 90px; width:90px; position:relative;top:-20px; left: 55px;"
+                                src="./new images/Group 7347.png" alt="">
+                            <h3 style="text-align: center;padding-left: 15px; position: relative;top:-20px ;font-size: 25px;cursor: context-menu; ">Video Production</h3>
+                            <!-- <p class="para19">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Inventore
+                                quisquam nam sint beatae
+                                voluptate quae velit eaque. Incidunt</p> -->
+                                <img style="height:20px;width:20px;cursor: pointer; position:relative; left:90px ;top: 0px; "
+                                src="./new images/frd.jpg" alt="">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</body>
+
+</html>

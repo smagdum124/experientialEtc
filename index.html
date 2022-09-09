@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Logo Particles</title>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background-color: #121212;
+      font-family: "Lato";
+      src: url("Lato/Lato-Bold.ttf") format("truetype"),
+        url("Lato/Lato-Bold.ttf") format("truetype");
+    }
+
+    img {
+      display: none;
+    }
+
+    .btn {
+      position: relative;
+      top: 270px;
+      left: 630px;
+    }
+
+    .startbtn {
+      height: 30px;
+      width: 160px;
+      border-radius: 5px;
+      background-color: white;
+      border: none;
+
+    }
+
+    .startbtn:hover {
+      background-color: #FFD700;
+
+    }
+
+    .btn a:hover {
+      color: white;
+    }
+
+    .btn a {
+      text-decoration: none;
+      color: black;
+      font-size: 20px;
+      font-weight: bold;
+    }
+  </style>
+</head>
+
+<body>
+  <img src="./new images/logo.png" id="logo" alt="Logo" class="next-particle" data-width="1200" data-height="600"
+    data-min-width="450" data-min-height="400" data-gravity="0.08" data-color="white" data-mouse-force="60"
+    data-noise="5" data-init-position="bottom" data-particle-gap="1" />
+  <div class="btn">
+    <button class="startbtn"><a href="front.html">START</a></button>
+  </div>
+
+  <script src="https://nextparticle.nextco.de/nextparticle.min.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,571 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carrer</title>
+</head>
+<style>
+     *{
+    margin: 0;
+   padding: 0;
+    box-sizing: border-box;
+    }
+   body{
+        background-color: black;
+       width:100%;
+       /* font-family: Lato, Helvetica, sans-serif; */
+        font-family: "Lato";
+        src: url("Lato/Lato-Bold.ttf") format("truetype"),
+       url("Lato/Lato-Bold.ttf") format("truetype"); 
+       
+    }
+    a {
+ text-decoration: none;
+}
+li {
+ list-style: none;
+}
+.navbar {
+ display: flex;
+ align-items: center;
+ justify-content: space-between;
+ padding: 20px;
+ background-color:Black;
+ color: #fff;
+ overflow:hidden;
+ position:fixed;
+ width:100%;
+ top:0;
+ z-index:99;
+ 
+}
+.nav-links a {
+ color: #fff;
+}
+/* LOGO */
+
+/* NAVBAR MENU */
+.menu {
+ display: flex;
+ gap: 1em;
+ font-size: 18px;
+}
+.menu li:hover {
+ background-color: #4c9e9e;
+ border-radius: 5px;
+ transition: 0.3s ease;
+ list-style:none;
+  text-decoration: none;
+}
+.menu li {
+ padding: 5px 14px;
+}
+/* DROPDOWN MENU */
+.services {
+ position: relative; 
+}
+.dropdown {
+ background-color: rgb(1, 139, 139);
+ padding: 1em 0;
+ position: absolute; /*WITH RESPECT TO PARENT*/
+ display: none;
+ border-radius: 8px;
+ top: 35px;
+}
+.dropdown li + li {
+ margin-top: 10px;
+}
+.dropdown li {
+ padding: 0.5em 1em;
+ width: 8em;
+ text-align: center;
+}
+.dropdown li:hover {
+ background-color: #4c9e9e;
+}
+.services:hover .dropdown {
+ display: block;
+}
+input[type=checkbox]{
+ display: none;
+} 
+/*HAMBURGER MENU*/
+.hamburger {
+ display: none;
+ font-size: 24px;
+ user-select: none;
+}
+/* APPLYING MEDIA QUERIES */
+@media (max-width: 768px) {
+  a {
+ text-decoration: none;
+}
+li {
+ list-style: none;
+}
+.menu { 
+ display:none;
+ position:fixed;
+ background-color:black;
+ right: 0;
+ left: 0;
+ 
+ height:100%;
+ text-align: center;
+ 
+}
+.menu li:hover {
+ display: inline-block;
+ background-color:#4c9e9e;
+ transition: 0.3s ease;
+}
+.menu li + li {
+ margin-top: 12px;
+}
+input[type=checkbox]:checked ~ .menu{
+ display: block;
+}
+.hamburger {
+ display: block;
+}
+.dropdown {
+ left: 50%;
+ top: 30px;
+ transform: translateX(35%);
+}
+.dropdown li:hover {
+ background-color: #4c9e9e;
+}
+}
+.First{
+        color:white;
+        padding-left:420px;
+        margin-top:180px;
+        display:flex;
+        
+    }
+    .head{
+        font-size:45px;
+    }
+    .img5{
+        margin-left:350px;
+        height:100%;
+        margin-top:20px;
+    }
+    .h1{
+        padding-top:25px;
+    }
+    .image1{
+        display:flex;
+     margin-left:405px;
+     margin-top:5px;
+    }
+    .img1{
+     display:flex;
+     margin-left:25px;
+     height:25px;
+    }
+    .img2{
+     display:flex;
+     margin-left:35px;
+    }
+    .h2{
+      margin-left:5px;
+      font-size:18px;
+      color:white;
+      
+    }
+    .h3{
+      margin-left:5px;
+      font-size:18px;
+      color:white;
+      
+    }
+    .job{
+        color:white;
+        margin-top:80px;
+        margin-left:100px;
+    }
+    .key{
+        color:white;
+        margin-top:50px;
+        margin-left:100px;
+    }
+    .h4{
+        font-size:26px;
+    }
+    .p1{
+        font-size:15px;
+        margin-top:10px;
+        margin-right:40px;
+    }
+    .key1{
+        font-size:26px;
+    }
+    .key2{
+        font-size:20px;
+        margin-top:10px;
+
+    }
+    .l2{
+        margin-top:10px;
+    }
+    .l3{
+        margin-top:10px;
+    }
+    .Educ1{
+        font-size:26px;
+        margin-top:50px;
+        color:white;
+        margin-left:100px;
+
+    }
+    .Educ2{
+        font-size:15px;
+        margin-top:10px;
+        color:white;
+        margin-left:100px;
+        margin-right:40px;
+
+    }
+    .sub-div {
+        color: white;
+        position: absolute;
+        top: 900px;
+        left: 120px;
+    }
+
+    .sub-div p {
+        font-size: 50px;
+        left: 5px;
+        position: relative;
+        margin-top: 10px;
+
+    }
+
+    .inputbox {
+        height: 50px;
+        width: 500px;
+        background-color: #2E2E2E;
+        border-radius: 10px;
+        margin-top: 20px;
+        border: none;
+        padding-left: 20px;
+        font-size: 20px;
+        color: white;
+
+
+    }
+
+
+    .sub-d {
+        position: absolute;
+        margin-top: 5px;
+    }
+
+    .btns {
+        font-size: 25px;
+        background-color: black;
+        color: white;
+        border: 1px solid white;
+    }
+
+    .inputb {
+        height: 100px;
+        width: 500px;
+        background-color: #2E2E2E;
+        border-radius: 10px;
+        margin-top: 20px;
+        border: none;
+        padding-left: 20px;
+       
+        font-size: 20px;
+        color: white;
+    }
+    .inputb1 {
+        height: 120px;
+        width: 500px;
+        background-color: #2E2E2E;
+        border-radius: 10px;
+        margin-top: 20px;
+        border: none;
+        padding-left: 20px;
+        font-size: 20px;
+        color: white;
+        border-style:dashed;
+        padding-left:100px;
+    }
+    .btns {
+        height: 70px;
+        width: 500px;
+        border-radius: 5px;
+        margin-top: -20px;
+    }
+
+    @media (min-width: 800px) and (max-width:950px){
+        .First{
+        color:white;
+        padding-left:80px;
+        margin-top:180px;
+        display:flex;
+        
+    }
+    .head{
+        font-size:50px;
+    }
+    .img5{
+        margin-left:70px;
+        height:100%;
+        margin-top:20px;
+    }
+    .h1{
+        padding-top:25px;
+    }
+    .image1{
+        display:flex;
+     margin-left:80px;
+     margin-top:5px;
+    }
+    .img1{
+     display:flex;
+     margin-left:25px;
+     height:25px;
+    }
+    .img2{
+     display:flex;
+     margin-left:35px;
+    }
+    .h2{
+      margin-left:5px;
+      font-size:22px;
+      color:white;
+      
+    }
+    .h3{
+      margin-left:5px;
+      font-size:22px;
+      color:white;
+      
+    }
+    .job{
+        color:white;
+        margin-top:80px;
+        margin-left:100px;
+    }
+    .key{
+        color:white;
+        margin-top:50px;
+        margin-left:100px;
+    }
+    .h4{
+        font-size:40px;
+    }
+    .p1{
+        font-size:20px;
+        margin-top:10px;
+        margin-right:40px;
+    }
+    .key1{
+        font-size:40px;
+    }
+    .key2{
+        font-size:20px;
+        margin-top:10px;
+
+    }
+    .l2{
+        margin-top:10px;
+    }
+    .l3{
+        margin-top:10px;
+    }
+    .Educ1{
+        font-size:40px;
+        margin-top:50px;
+        color:white;
+        margin-left:100px;
+
+    }
+    .Educ2{
+        font-size:20px;
+        margin-top:10px;
+        color:white;
+        margin-left:100px;
+        margin-right:40px;
+
+    }
+    .sub-div {
+        color: white;
+        position: absolute;
+        top: 900px;
+        left: 120px;
+    }
+
+    .sub-div p {
+        font-size: 50px;
+        left: 5px;
+        position: relative;
+        margin-top: 10px;
+
+    }
+
+    .inputbox {
+        height: 50px;
+        width: 500px;
+        background-color: #2E2E2E;
+        border-radius: 10px;
+        margin-top: 20px;
+        border: none;
+        padding-left: 20px;
+        font-size: 20px;
+        color: white;
+
+
+    }
+
+
+    .sub-d {
+        position: absolute;
+        margin-top: 5px;
+    }
+
+    .btns {
+        font-size: 25px;
+        background-color: black;
+        color: white;
+        border: 1px solid white;
+    }
+
+    .inputb {
+        height: 100px;
+        width: 500px;
+        background-color: #2E2E2E;
+        border-radius: 10px;
+        margin-top: 20px;
+        border: none;
+        padding-left: 20px;
+       
+        font-size: 20px;
+        color: white;
+    }
+    .inputb1 {
+        height: 120px;
+        width: 500px;
+        background-color: #2E2E2E;
+        border-radius: 10px;
+        margin-top: 20px;
+        border: none;
+        padding-left: 20px;
+        font-size: 20px;
+        color: white;
+        border-style:dashed;
+        padding-left:100px;
+    }
+    .btns {
+        height: 70px;
+        width: 500px;
+        border-radius: 5px;
+        margin-top: -20px;
+    }
+
+        
+    }
+    @media (min-width: 1000px) and (max-width:1600px){
+        .First{
+        color:white;
+        padding-left:500px;
+        margin-top:180px;
+        display:flex;
+        
+    }
+    .img5{
+        margin-left:500px;
+        height:100%;
+        margin-top:20px;
+    }
+    .img1{
+     display:flex;
+     margin-left:105px;
+     height:25px;
+    }
+    .img2{
+     display:flex;
+     margin-left:35px;
+    }
+    }
+
+    
+    
+</style>
+    <body>
+        <div class="main"> 
+            <nav class="navbar">
+                 <!-- LOGO -->
+                 <div class="logo"><a href="front.html"> <img  class="img"src="new images/logo.png"></a></div>
+                 <!-- NAVIGATION MENU -->
+                 <ul class="nav-links">
+                   <!-- USING CHECKBOX HACK -->
+                   <input type="checkbox" id="checkbox_toggle" />
+                   <label for="checkbox_toggle" class="hamburger">&#9776;</label>
+                   <!-- NAVIGATION MENUS -->
+                   <div class="menu" style="font-size: 18px;    font-weight: bold;">
+                     <li><a href="ourservice5.html">Service</a></li>
+                     <li><a href="work1.html">Work</a></li>
+                     <li class="services">
+                       <a href="/">Blog</a>
+                       <!-- DROPDOWN MENU -->
+                       <ul class="dropdown">
+                        </ul>
+                     </li>
+                     <li><a href="aboutus1.html">About Us</a></li>
+                     <li><a href="ContactUs.html">Contact Us</a></li>
+                   </div>
+                 </ul>
+            </div>
+            <div class="First">
+           <h1 class="head"> Graphic Designer</h1>
+            
+</div>
+<div class="image1">
+                <img  class="img1" src="new images/build.png"><p class="h2">Mumbai,Maharashtra</p>
+                <img  class="img2" src="new images/time.png"><p class="h3">0-3 years</p>
+</div>
+<div class="main">
+<div class="job">
+    <h3 class="h4">Job Description</h3>
+    <p class="p1">Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit veniam id molestiae praesentium alias laudantium dicta quos ipsam et iste, iusto rerum, quae inventore?<br>Perferendis officiis ea eveniet molestiae quibusdam.</p>
+</div>
+<div class="key">
+    <h3 class="key1">key Qualifications</h3>
+    <ul class="key2">
+        <li class="l1" style="font-size: 15px;" >Lorem ipsum dolor sit, amet consectetur adipisicing elit. </li>
+        <li class="l2"  style="font-size: 15px;">Lorem ipsum dolor sit amet consectetur adipisicing elit. </li>
+        <li class="l3"  style="font-size: 15px;">Lorem ipsum dolor sit amet consectetur adipisicing elit.</li>
+</ul>
+</div>  
+<div class="Educ">
+    <h3  class="Educ1">Education& Experience</h3>
+    <p class="Educ2">Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit veniam id molestiae praesentium alias laudantium dicta quos ipsam et iste, iusto rerum, quae inventore? Perferendis officiis ea eveniet molestiae quibusdam.</p>
+</div>    
+</div> 
+<div class="sub-div">
+        <div class="sub-div1">
+            <p style="cursor: context-menu ;font-size: 45px;">
+                Introduce yourself!
+            </p><br><br>
+            <div class="sub-d">
+                <input style="cursor: context-menu" type="text" placeholder="FullName" class="inputbox"><br><br>
+                <input style="cursor: context-menu" type="text" placeholder="Email" class="inputbox"><br><br>
+                <input style="cursor: context-menu" type="text" placeholder="Contact No" class="inputbox"><br><br>
+                <input style="cursor: context-menu" type="text" placeholder="Drag And Drop or browse your cv" class="inputb1"><br><br>
+                <input style="cursor: context-menu" type="text" placeholder="Leave a massage" class="inputb"><br><br>
+                <br><br>
+                <div>
+                    <a href=""><button style="cursor: pointer;font-size: 21px;" class="btns">Apply Now</button></a>
+                </div>
+            </div>
+
+        </div>
+        <div>

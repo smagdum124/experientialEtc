@@ -1,0 +1,1432 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        
+    }
+
+    body {
+        background-color: black;
+        width: 100%;
+        /* font-family: Lato, Helvetica, sans-serif; */
+        font-family: "Lato";
+        src: url("Lato/Lato-Bold.ttf") format("truetype"),
+       url("Lato/Lato-Bold.ttf") format("truetype");
+    }
+
+    a {
+        text-decoration: none;
+    }
+
+    li {
+        list-style: none;
+    }
+
+    .navbar {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 20px;
+        background-color: Black;
+        color: #fff;
+        overflow: hidden;
+        position: fixed;
+        width: 100%;
+        top: 0;
+        z-index: 99;
+
+    }
+
+    .nav-links a {
+        color: #fff;
+    }
+
+    /* LOGO */
+    .img {
+        height: 100px;
+    }
+
+    /* NAVBAR MENU */
+    .menu {
+        display: flex;
+        gap: 1em;
+        font-size: 18px;
+    }
+
+    .menu li:hover {
+        background-color: #4c9e9e;
+        border-radius: 5px;
+        transition: 0.3s ease;
+        list-style: none;
+        text-decoration: none;
+    }
+
+    .menu li {
+        padding: 5px 14px;
+    }
+
+    /* DROPDOWN MENU */
+    .services {
+        position: relative;
+    }
+
+    .dropdown {
+        background-color: rgb(1, 139, 139);
+        padding: 1em 0;
+        position: absolute;
+        /*WITH RESPECT TO PARENT*/
+        display: none;
+        border-radius: 8px;
+        top: 35px;
+    }
+
+    .dropdown li+li {
+        margin-top: 10px;
+    }
+
+    .dropdown li {
+        padding: 0.5em 1em;
+        width: 8em;
+        text-align: center;
+    }
+
+    .dropdown li:hover {
+        background-color: #4c9e9e;
+    }
+
+    .services:hover .dropdown {
+        display: block;
+    }
+
+    input[type=checkbox] {
+        display: none;
+    }
+
+    /*HAMBURGER MENU*/
+    .hamburger {
+        display: none;
+        font-size: 24px;
+        user-select: none;
+    }
+
+    APPLYING MEDIA QUERIES @media (max-width: 768px) {
+        a {
+            text-decoration: none;
+        }
+
+        li {
+            list-style: none;
+        }
+
+        .menu {
+            display: none;
+            position: fixed;
+            background-color: black;
+            right: 0;
+            left: 0;
+
+            height: 100%;
+            text-align: center;
+
+        }
+
+        .menu li:hover {
+            display: inline-block;
+            background-color: #4c9e9e;
+            transition: 0.3s ease;
+        }
+
+        .menu li+li {
+            margin-top: 12px;
+        }
+
+        input[type=checkbox]:checked~.menu {
+            display: block;
+        }
+
+        .hamburger {
+            display: block;
+        }
+
+        .dropdown {
+            left: 50%;
+            top: 30px;
+            transform: translateX(35%);
+        }
+
+        .dropdown li:hover {
+            background-color: #4c9e9e;
+        }
+    }
+
+    .main-div {
+        position: absolute;
+        margin-top: -100px;
+        height: 200px;
+        width: 1150px;
+        margin-left: 50px;
+
+
+    }
+
+    .main-div h1 {
+        font-size: 200px;
+        color: aqua;
+    }
+
+    .circle {
+        height: 100px;
+        width: 100px;
+        background-color: white;
+        border-radius: 100%;
+        position: absolute;
+        margin-top: -50px;
+        margin-left: 25px;
+        cursor: pointer;
+
+
+    }
+
+    .circle h2 {
+        margin-left: 12px;
+        margin-top: 30px;
+        font-size: 35px;
+        cursor: pointer;
+    }
+
+    .circle1 h2 {
+        margin-left: 12px;
+        margin-top: 30px;
+        font-size: 35px;
+        cursor: pointer;
+    }
+
+    .circle2 h2 {
+        margin-left: 12px;
+        margin-top: 30px;
+        font-size: 35px;
+        cursor: pointer;
+    }
+
+    .circle3 h2 {
+        margin-left: 12px;
+        margin-top: 30px;
+        font-size: 35px;
+        cursor: pointer;
+    }
+
+    .circle4 h2 {
+        margin-left: 12px;
+        margin-top: 30px;
+        font-size: 35px;
+        cursor: pointer;
+    }
+
+    .circle5 h2 {
+        margin-left: 12px;
+        margin-top: 30px;
+        font-size: 35px;
+        cursor: pointer;
+    }
+
+    .circle1 {
+        height: 100px;
+        width: 100px;
+        background-color: white;
+        border-radius: 100%;
+        position: absolute;
+        margin-top: -50px;
+        margin-left: 230px;
+        cursor: pointer;
+    }
+
+    .circle2 {
+        height: 100px;
+        width: 100px;
+        background-color: white;
+        border-radius: 100%;
+        position: absolute;
+        margin-top: -50px;
+        margin-left: 460px;
+        cursor: pointer;
+    }
+
+    .circle3 {
+        height: 100px;
+        width: 100px;
+        background-color: white;
+        border-radius: 100%;
+        position: absolute;
+        margin-top: -50px;
+        margin-left: 690px;
+        cursor: pointer;
+    }
+
+    .circle4 {
+        height: 100px;
+        width: 100px;
+        background-color: white;
+        border-radius: 100%;
+        position: absolute;
+        margin-top: -50px;
+        margin-left: 920px;
+        cursor: pointer;
+    }
+
+    .circle5 {
+        height: 100px;
+        width: 100px;
+        background-color: white;
+        border-radius: 100%;
+        position: absolute;
+        margin-top: -50px;
+        margin-left: 1150px;
+        cursor: pointer;
+    }
+
+    .caption {
+
+        color: white;
+        cursor: context-menu;
+    }
+
+    h1 {
+        font-size: 45px;
+        margin-top: 200px;
+        margin-left: 80px;
+    }
+
+    p {
+        font-size: 26px;
+        margin-left: 80px;
+    }
+
+    .caption1 {
+
+        color: white;
+    }
+
+    h2 {
+        font-size: 45px;
+        margin-top: 50px;
+        margin-left: 80px;
+    }
+
+    p {
+        font-size: 26px;
+        margin-left: 80px;
+    }
+
+    .caption2 {
+        margin-top: 240px;
+        color: white;
+        cursor: context-menu;
+    }
+
+    h2 {
+        font-size: 45px;
+        margin-top: 50px;
+        margin-left: 80px;
+    }
+
+    .slideshow-container {
+        max-width: 1000px;
+        position: relative;
+        margin: auto;
+
+        height: 350px;
+
+        margin-top: 20px;
+    }
+
+    /* Hide the images by default */
+    .mySlides {
+        display: none;
+    }
+
+    /* Next & previous buttons */
+    .prev,
+    .next {
+        cursor: pointer;
+        position: absolute;
+        top: 60%;
+        width: auto;
+        margin-top: -60px;
+        padding-left: 5px;
+        padding-right: 5px;
+        color: white;
+        font-weight: bold;
+        font-size: 100px;
+        transition: 0.6s ease;
+        border-radius: 0 3px 3px 0;
+        user-select: none;
+        margin-left: -100px;
+        margin-right: -100px;
+
+    }
+
+    /* Position the "next button" to the right */
+    .next {
+        right: 0;
+        border-radius: 7px 0 0 7px;
+    }
+
+    .arrow {
+        height: 30px;
+
+        -ms-transform: rotate(90deg);
+        /* IE 9 */
+        transform: rotate(90deg);
+    }
+
+    .arrow1 {
+        height: 30px;
+
+        -ms-transform: rotate(-95deg);
+        /* IE 9 */
+        transform: rotate(-95deg);
+    }
+
+    /* On hover, add a black background color with a little bit see-through */
+    .prev:hover,
+    .next:hover {
+        background-color: rgba(0, 0, 0, 0.8);
+    }
+
+    /* Caption text */
+    .text {
+        color: #f2f2f2;
+        font-size: 25px;
+        padding: 8px 12px;
+        position: absolute;
+        bottom: -80px;
+        width: 100%;
+        text-align: center;
+
+    }
+
+    /* Number text (1/3 etc) */
+    .numbertext {
+        color: #f2f2f2;
+        font-size: 12px;
+        padding: 8px 12px;
+        position: absolute;
+        top: 0;
+    }
+
+    .numbertext: hover {}
+
+    /* The dots/bullets/indicators */
+
+
+
+
+    /* Fading animation */
+    .fade {
+        animation-name: fade;
+        animation-duration: 1.5s;
+    }
+
+    @keyframes fade {
+        from {
+            opacity: .4
+        }
+
+        to {
+            opacity: 1
+        }
+    }
+
+    /* popup animation */
+    .modal {
+        display: none;
+        /* Hidden by default */
+        position: absolute;
+        /* Stay in place */
+        z-index: 1;
+        /* Sit on top */
+        padding-top: 250px;
+        /* Location of the box */
+        left: 0;
+        top: 0;
+        width: 100%;
+        /* Full width */
+        height: 1300px;
+        /* Full height */
+        /* Enable scroll if needed */
+
+        backdrop-filter: blur(6px);
+
+        background-color: rgba(0, 0, 0, 0.1);
+        /* Black w/ opacity */
+    }
+
+
+    .modal-content {
+        border-radius: 50%;
+        width: 350px;
+        height: 350px;
+        border: 15px solid white;
+        margin-top: 100px;
+        margin-left: 45px;
+        background-color: white;
+        transition: 0.6s;
+    }
+
+    .modal1 {
+        display: none;
+        /* Hidden by default */
+        position: absolute;
+        /* Stay in place */
+        z-index: 1;
+        /* Sit on top */
+        padding-top: 200px;
+        /* Location of the box */
+        left: 0;
+        top: 0;
+        width: 100%;
+        /* Full width */
+        height: 1300px;
+        /* Full height */
+        /* Enable scroll if needed */
+        backdrop-filter: blur(6px);
+        background-color: rgba(0, 0, 0, 0.1);
+        /* Black w/ opacity */
+    }
+
+    .modal-content1 {
+        border-radius: 50%;
+        width: 350px;
+        height: 350px;
+        border: 15px solid white;
+        margin-top: 150px;
+        margin-left: 250px;
+        background-color: white;
+        transition: 0.6s;
+
+    }
+
+    .modal2 {
+        display: none;
+        /* Hidden by default */
+        position: absolute;
+        /* Stay in place */
+        z-index: 1;
+        /* Sit on top */
+        padding-top: 270px;
+        /* Location of the box */
+        left: 0;
+        top: 0;
+        width: 100%;
+        /* Full width */
+        height: 1300px;
+        /* Full height */
+        /* Enable scroll if needed */
+        backdrop-filter: blur(6px);
+        background-color: rgba(0, 0, 0, 0.1);
+        /* Black w/ opacity */
+    }
+
+    .modal-content2 {
+        border-radius: 50%;
+        width: 350px;
+        height: 350px;
+        border: 15px solid white;
+        margin-top: 100px;
+        margin-left: 350px;
+        background-color: white;
+        transition: 0.6s;
+
+
+
+    }
+
+    .modal3 {
+        display: none;
+        /* Hidden by default */
+        position: absolute;
+        /* Stay in place */
+        z-index: 1;
+        /* Sit on top */
+        padding-top: 270px;
+        /* Location of the box */
+        left: 0;
+        top: 0;
+        width: 100%;
+        /* Full width */
+        height: 1300px;
+        /* Full height */
+        /* Enable scroll if needed */
+        backdrop-filter: blur(6px);
+        background-color: rgba(0, 0, 0, 0.1);
+        /* Black w/ opacity */
+    }
+
+    .modal-content3 {
+        border-radius: 50%;
+        width: 350px;
+        height: 350px;
+        border: 15px solid white;
+        margin-top: 100px;
+        margin-left: 500px;
+        background-color: white;
+        transition: 0.6s;
+    }
+
+    .modal4 {
+        display: none;
+        /* Hidden by default */
+        position: absolute;
+        /* Stay in place */
+        z-index: 1;
+        /* Sit on top */
+        padding-top: 270px;
+        /* Location of the box */
+        left: 0;
+        top: 0;
+        width: 100%;
+        /* Full width */
+        height: 1300px;
+        /* Full height */
+        /* Enable scroll if needed */
+        backdrop-filter: blur(6px);
+        background-color: rgba(0, 0, 0, 0.1);
+        /* Black w/ opacity */
+    }
+
+    .modal-content4 {
+        border-radius: 50%;
+        width: 350px;
+        height: 350px;
+        border: 15px solid white;
+        margin-top: 100px;
+        margin-left: 800px;
+        background-color: white;
+        transition: 0.6s;
+    }
+
+    .modal5 {
+        display: none;
+        /* Hidden by default */
+        position: absolute;
+        /* Stay in place */
+        z-index: 1;
+        /* Sit on top */
+        padding-top: 270px;
+        /* Location of the box */
+        left: 0;
+        top: 0;
+        width: 100%;
+        /* Full width */
+        height: 1300px;
+        /* Full height */
+        /* Enable scroll if needed */
+        backdrop-filter: blur(6px);
+        background-color: rgba(0, 0, 0, 0.1);
+        /* Black w/ opacity */
+    }
+
+    .modal-content5 {
+        border-radius: 50%;
+        width: 350px;
+        height: 350px;
+        border: 15px solid white;
+        margin-top: 100px;
+        margin-left: 960px;
+        background-color: white;
+        transition: 0.6s;
+    }
+
+
+
+    .close1 {
+        color: #000;
+        float: right;
+        font-size: 28px;
+        font-weight: bold;
+        display: none;
+    }
+
+    .container {
+        position: relative;
+        width: 5%;
+        margin-right: 850px;
+
+    }
+
+    .overlay {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 50px;
+        right: 0;
+        opacity: 0;
+        transition: .5s ease;
+        width: 900px;
+        height: 500px;
+
+    }
+
+    .container:hover .overlay {
+        opacity: 1;
+    }
+
+    .heading {
+        position: absolute;
+        left: 50px;
+
+        width: 900px;
+        height: 500px;
+    }
+
+    .heading1 {
+        position: absolute;
+        left: 50px;
+        width: 870px;
+        height: 500px;
+    }
+
+    /* /////////////////////////////for responsive////////////////////// */
+    /* for dekstop */
+    @media screen and (min-width:1900px) {
+
+
+        .modal-content {
+            margin-top: 300px;
+            margin-left: 45px;
+        }
+
+        .modal-content1 {
+            margin-top: 300px;
+            margin-left: 250px;
+        }
+
+        .modal-content2 {
+            margin-top: 300px;
+            margin-left: 550px;
+        }
+
+        .modal-content3 {
+            margin-top: 300px;
+            margin-left: 800px;
+        }
+
+        .modal-content4 {
+            margin-top: 300px;
+            margin-left: 1200px;
+        }
+
+        .modal-content5 {
+            margin-top: 300px;
+            margin-left: 1500px;
+        }
+
+        .circle {
+            height: 150px;
+            width: 150px;
+            background-color: white;
+            cursor: pointer;
+        }
+
+        .circle h2 {
+            margin-left: 25px;
+            margin-top: 55px;
+            font-size: 45px;
+            cursor: pointer;
+        }
+
+        .circle1 h2 {
+            margin-left: 25px;
+            margin-top: 55px;
+            font-size: 45px;
+            cursor: pointer;
+        }
+
+        .circle2 h2 {
+            margin-left: 25px;
+            margin-top: 55px;
+            font-size: 45px;
+            cursor: pointer;
+        }
+
+        .circle3 h2 {
+            margin-left: 25px;
+            margin-top: 55px;
+            font-size: 45px;
+            cursor: pointer;
+        }
+
+        .circle4 h2 {
+            margin-left: 25px;
+            margin-top: 55px;
+            font-size: 45px;
+            cursor: pointer;
+        }
+
+        .circle5 h2 {
+            margin-left: 25px;
+            margin-top: 55px;
+            font-size: 45px;
+            cursor: pointer;
+        }
+
+        .circle1 {
+            height: 150px;
+            width: 150px;
+            background-color: white;
+            cursor: pointer;
+            left: 50px;
+        }
+
+        .circle2 {
+            height: 150px;
+            width: 150px;
+            background-color: white;
+            cursor: pointer;
+            left: 100px;
+        }
+
+        .circle3 {
+            height: 150px;
+            width: 150px;
+            background-color: white;
+            cursor: pointer;
+            left: 200px;
+        }
+
+        .circle4 {
+            height: 150px;
+            width: 150px;
+            background-color: white;
+            cursor: pointer;
+            left: 300px;
+        }
+
+        .circle5 {
+            height: 150px;
+            width: 150px;
+            background-color: white;
+            cursor: pointer;
+            left: 400px;
+        }
+
+        .navbar {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 20px;
+            background-color: Black;
+            color: #fff;
+            overflow: hidden;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 99;
+        }
+
+        .nav-links {
+            padding-right: 10px;
+        }
+
+        .menu li a {
+            font-size: 30px;
+        }
+
+
+
+        h1 {
+            font-size: 60px;
+            margin-top: 200px;
+            margin-left: 80px;
+        }
+
+        p {
+            font-size: 40px;
+            margin-left: 80px;
+        }
+
+        h2 {
+            font-size: 60px;
+        }
+
+        .caption2 h2 {
+            font-size: 60px;
+        }
+
+        .container {
+            display: block;
+            position: absolute;
+            left: -300px;
+
+        }
+
+        .heading {
+            width: 1500px;
+            height: 800px;
+            padding-bottom: 50px;
+        }
+
+        .overlay {
+            width: 1500px;
+            height: 800px;
+            padding-bottom: 50px;
+        }
+
+
+        .arrow {
+            position: relative;
+            left: -300px;
+            height: 60px;
+            top: 200px;
+            -ms-transform: rotate(90deg);
+            transform: rotate(90deg);
+        }
+
+        .arrow1 {
+            position: relative;
+            left: 290px;
+            height: 60px;
+            top: 200px;
+            -ms-transform: rotate(-95deg);
+            transform: rotate(-95deg);
+        }
+
+        .img {
+            height: 120px;
+            width: 180px;
+        }
+
+        .horizontal {
+            width: 1500px;
+            position: relative;
+            top: 20px;
+        }
+
+    }
+
+    /* //////////////for tablet//////////////// */
+    @media screen and (min-width:480px) and (max-width:1023px) {
+
+        .modal {
+            width: 170%;
+        }
+
+        .modal1 {
+            width: 170%;
+        }
+
+        .modal2 {
+            width: 170%;
+        }
+
+        .modal3 {
+            width: 170%;
+        }
+
+        .modal4 {
+            width: 170%;
+        }
+
+        .modal5 {
+            width: 170%;
+        }
+
+        .modal-content {
+            margin-top: 350px;
+            margin-left: 45px;
+        }
+
+        .modal-content1 {
+            margin-top: 400px;
+            margin-left: 150px;
+        }
+
+        .modal-content2 {
+            margin-top: 350px;
+            margin-left: 270px;
+        }
+
+        .modal-content3 {
+            margin-top: 350px;
+            margin-left: 500px;
+        }
+
+        .modal-content4 {
+            margin-top: 350px;
+            margin-left: 750px;
+        }
+
+        .modal-content5 {
+            margin-top: 350px;
+            margin-left: 900px;
+        }
+
+        .navbar {
+            display: flex;
+
+            align-items: center;
+            justify-content: space-between;
+            padding: 15px;
+            background-color: Black;
+            color: #fff;
+            overflow: hidden;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 99;
+        }
+
+        .nav-links {
+            padding-right: 10px;
+        }
+
+        .menu {
+            display: flex;
+            gap: 1em;
+            font-size: 15px;
+        }
+
+        .menu li:hover {
+            background-color: #4c9e9e;
+            border-radius: 3px;
+            transition: 0.3s ease;
+            list-style: none;
+            text-decoration: none;
+        }
+
+        .menu li {
+            padding: 3px 11px;
+        }
+
+        h1 {
+            font-size: 50px;
+            margin-top: 200px;
+            margin-left: 80px;
+
+        }
+
+        p {
+
+            font-size: 38px;
+            margin-left: 80px;
+
+        }
+
+        .container {
+            display: block;
+            position: relative;
+            left: 50px;
+
+        }
+
+        .heading {
+            position: relative;
+            left: 150px;
+        }
+
+        .overlay {
+            position: relative;
+            left: 150px;
+            top: -500px;
+        }
+
+        .arrow {
+            position: relative;
+            left: 200px;
+            height: 30px;
+            -ms-transform: rotate(90deg);
+            transform: rotate(90deg);
+        }
+
+
+        .arrow1 {
+            position: relative;
+            left: 320px;
+            height: 30px;
+            -ms-transform: rotate(-95deg);
+            transform: rotate(-95deg);
+        }
+
+        .menu li a {
+            font-size: 25px;
+            
+        }
+
+    }
+</style>
+
+<body>
+
+    <div class="main">
+        <nav class="navbar">
+            <!-- LOGO -->
+            <div class="logo"><a href="front.html"> <img class="img" src="new images/logo.png"></a></div>
+            <!-- NAVIGATION MENU -->
+            <ul class="nav-links">
+                <!-- USING CHECKBOX HACK -->
+                <input type="checkbox" id="checkbox_toggle" />
+                <label for="checkbox_toggle" class="hamburger">&#9776;</label>
+                <!-- NAVIGATION MENUS -->
+                <div class="menu" style="font-size: 18px;    font-weight: bold;">
+                    <li><a href="ourservice5.html" >Service</a></li>
+                    <li><a href="work1.html">Work</a></li>
+                    <li class="services">
+                        <a href="/">Blog</a>
+                        <!-- DROPDOWN MENU -->
+                        <ul class="dropdown">
+                        </ul>
+                    </li>
+                    <li><a href="aboutus1.html">About Us</a></li>
+                    <li><a href="ContactUs.html">Contact Us</a></li>
+                </div>
+            </ul>
+    </div>
+    <div class="caption">
+        <h1>About us</h1>
+        <p style="font-size: 21px;">ExperientialEtc is a 360 degree activation agency which is disrupting the way traditional activations have
+            been done
+            by integrating latest, cutting edge & futuristic technology in its most simplest form to create jaw
+            dropping<br> experiences.</p>
+    </div>
+    <div class="caption1">
+        <h2>Timeline</h2>
+        <p style="font-size: 21px;">Tap on the year to know more</p>
+    </div>
+
+    <div class="main-div">
+        <h1 class="horizontal"><strong>
+                <hr>
+                <hr>
+            </strong></h1>
+        <div id="myBtn" class="circle">
+            <h2 style="font-size: 27px; font-weight:bolder; padding-left: 5px; ">2017</h2>
+        </div>
+        <div id="myBtn1" class="circle1">
+            <h2 style="font-size: 27px; font-weight:bolder;padding-left: 5px; ">2018</h2>
+        </div>
+        <div id="myBtn2" class="circle2">
+            <h2 style="font-size: 27px; font-weight:bolder;padding-left: 5px; ">2019</h2>
+        </div>
+        <div id="myBtn3" class="circle3">
+            <h2 style="font-size: 27px; font-weight:bolder;padding-left: 5px; ">2020</h2>
+        </div>
+        <div id="myBtn4" class="circle4">
+            <h2 style="font-size: 27px; font-weight:bolder; padding-left: 5px;">2021</h2>
+        </div>
+        <div id="myBtn5" class="circle5">
+            <h2 style="font-size: 27px; font-weight:bolder; padding-left: 5px;">2022</h2>
+        </div>
+    </div>
+    <div id="myModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h3 style="text-align: center; position: relative;top: 20px;cursor: context-menu; font-size:36px;  padding-top: 15px;">THE ORIGINS</h3>
+
+            <h4 style="padding: 41px 35px; cursor: context-menu; text-align: center;font-size:17px; ">
+
+                 The Inception.The Itch. First 4
+                months of the business
+                and 4 clients to boast of.
+            </h4>
+
+
+        </div>
+    </div>
+    <div id="myModal1" class="modal1">
+        <div class="modal-content1">
+            <span class="close1">&times;</span>
+            <h3 style="text-align: center; position: relative;top: 20px;cursor: context-menu; font-size:36px;  padding-top: 15px;">PREPARE</h3>
+            <h4 style="padding: 41px 35px;cursor: context-menu; text-align: center;font-size: 17px;"> More clients invest their trust in us. HOLOVSN and
+                HOLOMIST take the industry by storm.</h4>
+        </div>
+    </div>
+    <div id="myModal2" class="modal2">
+        <div class="modal-content2">
+            <span class="close2">&times;</span>
+            <h3 style="text-align: center; position: relative;top: 20px;cursor: context-menu;font-size:36px;  padding-top: 15px;">STABILISE</h3>
+            <h4 style="padding: 41px 35px;cursor: context-menu; text-align: center; font-size:17px;"> Design and Production studio gets our creative juices
+                flowing.DIGIPLAY gains traction Sensor and Projection based activations begin. International events excuted in Middle
+                East countries. </h4>
+        </div>
+    </div>
+    <div id="myModal3" class="modal3">
+        <div class="modal-content3">
+            <span class="close3">&times;</span>
+            <h3 style="text-align: center; position: relative;top: 20px;cursor: context-menu;font-size:36px;  padding-top: 15px;">ACCELERATE</h3>
+            <h4 style="padding: 41px 35px;cursor: context-menu; text-align: center ;font-size: 17px;">  Bigger Team Bigger facility. Sustainability & Hardihood
+                during the pandemic established. </h4>
+        </div>
+    </div>
+    <div id="myModal4" class="modal4">
+        <div class="modal-content4">
+            <h3 style="text-align: center; position: relative;top: 20px;cursor: context-menu;font-size:36px;  padding-top: 15px;">ADAPTION</h3>
+            <h4 style="padding: 41px 35px;cursor: context-menu; text-align: center; font-size: 17px;">  Revolutionized and successfully Pivoted digital tech
+                Aungmented reality, Artificial intelligence and virtual conferences take forefront </h4>
+        </div>
+    </div>
+    <div id="myModal5" class="modal5">
+        <div class="modal-content5">
+            <h3 style="text-align: center; position: relative;top: 20px;cursor: context-menu;font-size: 36px;  padding-top: 15px;">DISRUPTION</h3>
+            <h4 style="padding: 41px 35px;cursor: context-menu; text-align: center; font-size: 17px;">  Global Exapansion Penetration in
+                Metaverse Inovation
+                /Experiences centers and semi SaaS based applications excuted to enhance scalability </h4>
+
+        </div>
+    </div>
+
+    <div class="caption2">
+        <h2>Meet our Team</h2>
+
+    </div>
+    <div class="slideshow-container">
+
+        <!-- Full-width images with number and caption text -->
+
+
+
+        <div class="mySlides fade">
+            <div class="container">
+                <div class="heading">
+                    <img src="new images/Curved Edge/Marketing NB.png" style="height:100%; width:100%;">
+                </div>
+                <div class="overlay">
+                    <div class="heading1"></div>
+                    <img src="new images/Curved Edge/Marketing B.png" style="height:100%; width:100%;" ;>
+                </div>
+            </div>
+
+
+        </div>
+        <div class="mySlides fade">
+            <div class="container">
+                <div class="heading">
+                    <img src="new images/Curved Edge/Accounts and Hr NB.png" style="height:100%; width:100%;">
+                </div>
+                <div class="overlay">
+                    <div class="heading1"></div>
+                    <img src="new images/Curved Edge/Accounts and Hr B.png" style="height:100%; width:100%;" ;>
+                </div>
+            </div>
+
+
+        </div>
+        <div class="mySlides fade">
+            <div class="container">
+                <div class="heading">
+                    <img src="new images/Curved Edge/BTL NB.png" style="height:100%; width:100%;">
+                </div>
+                <div class="overlay">
+                    <div class="heading1"></div>
+                    <img src="new images/Curved Edge/BTL B.png" style="height:100%; width:100%;" ;>
+                </div>
+            </div>
+
+
+        </div>
+        <div class="mySlides fade">
+            <div class="container">
+                <div class="heading">
+                    <img src="new images/Curved Edge/Designing NB.png" style="height:100%; width:100%;">
+                </div>
+                <div class="overlay">
+                    <div class="heading1"></div>
+                    <img src="new images/Curved Edge/Designing B.png" style="height:100%; width:100%;" ;>
+                </div>
+            </div>
+
+
+        </div>
+        <div class="mySlides fade">
+            <div class="container">
+                <div class="heading">
+                    <img src="new images/Curved Edge/Development NB.png" style="height:100%; width:100%;">
+                </div>
+                <div class="overlay">
+                    <div class="heading1"></div>
+                    <img src="new images/Curved Edge/Development B.png" style="height:100%; width:100%;" ;>
+                </div>
+            </div>
+
+
+        </div>
+        <div class="mySlides fade">
+            <div class="container">
+                <div class="heading">
+                    <img src="new images/Curved Edge/Production NB.png" style="height:100%; width:100%;">
+                </div>
+                <div class="overlay">
+                    <div class="heading1"></div>
+                    <img src="new images/Curved Edge/Production B.png" style="height:100%; width:100%;" ;>
+                </div>
+            </div>
+
+
+        </div>
+
+        <!-- Next and previous buttons -->
+        <a class="prev" onclick="plusSlides(-1)"><img class="arrow" src="new images/arrow.png"></a>
+        <a class="next" onclick="plusSlides(1)"><img class="arrow1" src="new images/arrow.png"></a>
+    </div>
+    <br>
+
+    <div style="text-align:center">
+    </div>
+
+    <script>
+
+        var modal = document.getElementById("myModal");
+
+        var btn = document.getElementById("myBtn");
+
+        var span = document.getElementsByClassName("close")[0];
+        btn.onclick = function () {
+            modal.style.display = "block";
+        }
+        span.onclick = function () {
+            modal.style.display = "none";
+        }
+        window.onclick = function (event) {
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        }
+        var modal1 = document.getElementById("myModal1");
+
+        var btn1 = document.getElementById("myBtn1");
+
+        var span1 = document.getElementsByClassName("close1")[0];
+        btn1.onclick = function () {
+            modal1.style.display = "block";
+        }
+        span1.onclick = function () {
+            modal1.style.display = "none";
+        }
+        window.onclick = function (event) {
+            if (event.target == modal1) {
+                modal1.style.display = "none";
+            }
+        }
+        var modal3 = document.getElementById("myModal3");
+
+        var btn3 = document.getElementById("myBtn3");
+
+        var span3 = document.getElementsByClassName("close3")[0];
+        btn3.onclick = function () {
+            modal3.style.display = "block";
+        }
+        span3.onclick = function () {
+            modal3.style.display = "none";
+        }
+        window.onclick = function (event) {
+            if (event.target == modal3) {
+                modal3.style.display = "none";
+            }
+        }
+        var modal4 = document.getElementById("myModal4");
+
+        var btn4 = document.getElementById("myBtn4");
+
+        var span4 = document.getElementsByClassName("close")[0];
+        btn4.onclick = function () {
+            modal4.style.display = "block";
+        }
+        span4.onclick = function () {
+            modal4.style.display = "none";
+        }
+        window.onclick = function (event) {
+            if (event.target == modal4) {
+                modal4.style.display = "none";
+            }
+        }
+        var modal5 = document.getElementById("myModal5");
+
+        var btn5 = document.getElementById("myBtn5");
+
+        var span5 = document.getElementsByClassName("close")[0];
+        btn5.onclick = function () {
+            modal5.style.display = "block";
+        }
+        window.onclick = function (event) {
+            if (event.target == modal) {
+                modal.style.display = "none";
+            } else if (event.target == modal1) {
+                modal1.style.display = "none";
+            } else if (event.target == modal2) {
+                modal2.style.display = "none"
+            } else if (event.target == modal3) {
+                modal3.style.display = "none"
+            } else if (event.target == modal3) {
+                modal3.style.display = "none"
+            } else if (event.target == modal4) {
+                modal4.style.display = "none"
+            } else if (event.target == modal5) {
+                modal5.style.display = "none"
+            }
+        }
+
+
+
+
+
+        let slideIndex = 1;
+        showSlides(slideIndex);
+
+        // Next/previous controls
+        function plusSlides(n) {
+            showSlides(slideIndex += n);
+        }
+
+        // Thumbnail image controls
+        function currentSlide(n) {
+            showSlides(slideIndex = n);
+        }
+
+        function showSlides(n) {
+            let i;
+            let slides = document.getElementsByClassName("mySlides");
+
+            if (n > slides.length) { slideIndex = 1 }
+            if (n < 1) { slideIndex = slides.length }
+            for (i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";
+            }
+
+            slides[slideIndex - 1].style.display = "block";
+
+        }
+
+
+        var modal2 = document.getElementById("myModal2");
+
+        var btn2 = document.getElementById("myBtn2");
+
+        var span = document.getElementsByClassName("close")[0];
+        btn2.onclick = function () {
+            modal2.style.display = "block";
+        }
+        span2.onclick = function () {
+            modal2.style.display = "none";
+        }
+        window.onclick = function (event) {
+            if (event.target == modal1) {
+                modal2.style.display = "none";
+            }
+        }
+
+
+    </script>
+
+
+</body>
+
+</html>
