@@ -1,0 +1,1277 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SubServices</title>
+</head>
+<style>
+     *{
+    margin: 0;
+   padding: 0;
+    box-sizing: border-box;
+    }
+   body{
+        background-color: black;
+       width:100%;
+       /* font-family: Lato, Helvetica, sans-serif; */
+       font-family: "Lato";
+      src: url("Lato/Lato-Bold.ttf") format("truetype"),
+        url("Lato/Lato-Bold.ttf") format("truetype");
+       
+    }
+    a {
+ text-decoration: none;
+}
+li {
+ list-style: none;
+}
+.navbar {
+ display: flex;
+ align-items: center;
+ justify-content: space-between;
+ padding: 20px;
+ background-color:Black;
+ color: #fff;
+ overflow:hidden;
+ position:fixed;
+ width:100%;
+ top:0;
+ z-index:99;
+ 
+}
+.nav-links a {
+ color: #fff;
+}
+/* LOGO */
+
+/* NAVBAR MENU */
+.menu {
+ display: flex;
+ gap: 1em;
+ font-size: 18px;
+}
+.menu li:hover {
+ /* background-color: #4c9e9e; */
+ border-radius: 5px;
+ transition: 0.3s ease;
+ list-style:none;
+  text-decoration: none;
+}
+.menu li {
+ padding: 5px 14px;
+}
+/* DROPDOWN MENU */
+.services {
+ position: relative; 
+}
+.dropdown {
+ background-color: rgb(1, 139, 139);
+ padding: 1em 0;
+ position: absolute; /*WITH RESPECT TO PARENT*/
+ display: none;
+ border-radius: 8px;
+ top: 35px;
+}
+.dropdown li + li {
+ margin-top: 10px;
+}
+.dropdown li {
+ padding: 0.5em 1em;
+ width: 8em;
+ text-align: center;
+}
+.dropdown li:hover {
+ background-color: #4c9e9e;
+}
+.services:hover .dropdown {
+ display: block;
+}
+input[type=checkbox]{
+ display: none;
+} 
+/*HAMBURGER MENU*/
+.hamburger {
+ display: none;
+ font-size: 24px;
+ user-select: none;
+}
+/* APPLYING MEDIA QUERIES */
+@media (max-width: 768px) {
+  a {
+ text-decoration: none;
+}
+li {
+ list-style: none;
+}
+.menu { 
+ display:none;
+ position:fixed;
+ background-color:black;
+ right: 0;
+ left: 0;
+ 
+ height:100%;
+ text-align: center;
+ 
+}
+.menu li:hover {
+ display: inline-block;
+ background-color:#4c9e9e;
+ transition: 0.3s ease;
+}
+.menu li + li {
+ margin-top: 12px;
+}
+input[type=checkbox]:checked ~ .menu{
+ display: block;
+}
+.hamburger {
+ display: block;
+}
+.dropdown {
+ left: 50%;
+ top: 30px;
+ transform: translateX(35%);
+}
+.dropdown li:hover {
+ background-color: #4c9e9e;
+}
+}
+    .first{
+        display:flex;
+        height:250px;
+       
+        margin-top:200px;
+    }
+    .h3{
+        color:white;
+        padding-left:100px;
+    }
+    .image{
+        padding-left:500px;
+    }
+    .btn{
+        margin-left:-15px;
+        border:2px solid white;
+       border-radius:10px;
+        width:160px;
+        height:30px;
+        background-color:black;
+        color:white;
+        margin-top:50px;
+
+    }
+    .p1{
+        margin-top:10px;
+        
+    }
+    .content {
+        text-align: center;
+        padding-top: 0px;
+    }
+    .card-container {
+        padding-top: 30px;
+    }
+
+    .cards {
+        padding: 0px 70px;
+        display: flex;
+        flex-wrap: wrap;
+
+    }
+
+    .cards1 {
+        padding: 0px 120px;
+        display: flex;
+        flex-wrap: wrap;
+
+    }
+
+    .card1 {
+        height: 250px;
+        width: 200px;
+        background-color: #171717;
+        border-radius: 10px;
+        border: none;
+        margin-bottom:10px;
+        margin-left:150px;
+
+    }
+
+    .card2 {
+        height: 250px;
+        width: 200px;
+        background-color: #171717;
+        border-radius: 10px;
+        border: none;
+        margin-left:80px;
+    }
+
+    .card3 {
+        height: 250px;
+        width: 200px;
+        background-color: #171717;
+        border-radius: 10px;
+        border: none;
+        margin-left:80px;
+    }
+    .card-content1 {
+        /* text-align: center; */
+        padding-top: 50px;
+        
+    }
+
+    .para1 {
+        padding-left: 20px;
+        /* padding-right: 10px; */
+        color: #7E7C73;
+        position: relative;
+        top: -30px;
+    }
+    .card-content2 {
+        /* text-align: center; */
+        padding-top: 50px;
+    }
+
+    .para2 {
+        padding-left: 20px;
+        color: #7E7C73;
+        position: relative;
+        top: -30px;
+    }
+
+    .card-content3 {
+        /* text-align: center; */
+        padding-top: 50px;
+    }
+
+    .para3 {
+        padding-left: 20px;
+        color: #7E7C73;
+        position: relative;
+        top: -30px;
+    }
+    .Secondlevel{
+        display:flex;
+        margin-left:20px;
+    }
+    .second{
+        display:flex;
+        margin-top:40px;
+       
+    }
+    .title{
+       padding-left:20px;
+       color:white;
+       /* font-size: 45px; */
+    }
+    
+    .p1{
+        color:white;
+        margin-left:-20px;
+    }
+    .p2{
+        color:white;
+        padding-left:30px;
+    }
+    .p3{
+        color:white;
+        padding-left:10px;
+    }
+    .p4{
+        color:white;
+        padding-left:10px;
+    }
+    .p5{
+        color:white;
+        padding-left:10px;
+    }
+    .image1{
+        padding-left:80px;
+    }
+    .tl{
+        display:flex;
+    }
+    .title2{
+       padding-left:10px;
+       color:white;
+    }
+    .Thirdlevel{
+        display:flex;
+        margin-left:20px;
+        margin-top:30px;
+    }
+    .third{
+        display:flex;
+        margin-top:40px;
+    }
+       
+    .fourth{
+        display:flex;
+        margin-top:40px;
+       
+    }
+    .fifth{
+        display:flex;
+        margin-top:40px;
+       
+    }
+    .title3{
+        color:white;
+        margin-top:20px;
+        margin-left:10px;
+    }
+    .Fourtlevel{
+        display:flex;
+        margin-left:20px;
+        margin-top:30px;
+    }
+    .filter{
+        color:white;
+        margin-left:80px;
+        margin-top:10px;
+        font-size:35px;
+
+    }
+    .midlevel{
+        display:flex;
+    }
+    .title4{
+        color:white;
+        margin-top:20px;
+        margin-left:10px;
+
+    }
+    .card-cont{
+        display:flex;
+    }
+    .card-cont1{
+        margin-top:90px;
+       
+       margin-left:200px;
+       
+    }
+    .card-cont2{
+        margin-left:200px;
+        margin-top:50px;
+       
+    }
+    .card-cont3{
+        margin-left:200px;
+        margin-top:90px;
+    }
+    .accordion {
+  background-color: #171717;
+  color: #444;
+  cursor: pointer;
+  padding: 18px;
+  width: 45%;
+  border: none;
+  text-align: left;
+  outline: none;
+  font-size: 15px;
+  transition: 0.4s;
+  color:white;
+  margin-top:50px;
+  margin-left:80px;
+  border-radius:15px;
+
+}
+
+
+
+
+.accordion:after {
+  content: '\002B';
+  color: white;
+  font-weight: bold;
+  float: right;
+  margin-left: 5px;
+}
+
+.active:after {
+  content: "\2212";
+}
+
+.panel {
+  padding: 0 18px;
+  color:white;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.2s ease-out;
+  width:45%;
+  background-color:#171717;
+  border:1px solid black;
+  border-radius:10px;
+  margin-left:80px;
+  margin-top:10px;
+  
+}
+.toplevel{
+    display:flex;
+}
+.title2{
+    margin-top:20px;
+}
+.last{
+    display:flex;
+   
+   
+    margin-top:150px;
+}
+.sub-div {
+        color: white;
+        position:relative;
+        
+        
+    }
+
+    .sub-div p {
+        font-size: 50px;
+        left: 5px;
+        position: relative;
+        margin-top: 0px;
+
+    }
+
+    .inputbox {
+        height: 50px;
+        width: 500px;
+        background-color: #2E2E2E;
+        border-radius: 10px;
+        margin-top: 20px;
+        border: none;
+        padding-left: 20px;
+        font-size: 20px;
+        color: white;
+
+
+    }
+
+
+    .sub-d {
+        margin-top:0px;
+        
+        
+    }
+
+    .btns {
+        font-size: 25px;
+        background-color: black;
+        color: white;
+        border: 1px solid white;
+    }
+
+    .inputb {
+        height: 100px;
+        width: 500px;
+        background-color: #2E2E2E;
+        border-radius: 10px;
+        margin-top: 20px;
+        border: none;
+        padding-left: 20px;
+        font-size: 20px;
+        color: white;
+    }
+
+    .btns {
+        height: 70px;
+        width: 500px;
+        border-radius: 5px;
+        margin-top: -20px;
+    }
+
+    .location {
+        height: 220px;
+        width: 200px;
+        background-color: #2E2E2E;
+        border-radius: 5px;
+        font-size: 10px;
+        position: absolute;
+        top: 200px;
+        right: -350px;
+    }
+
+    .loc {
+        position: absolute;
+        margin-top: 20px;
+        margin-left: 80px;
+    }
+
+    .location pre {
+        margin-top: 100px;
+        font-size: 10px;
+    }
+
+    .email {
+
+        height: 100px;
+        width: 200px;
+        background-color: #2E2E2E;
+        border-radius: 10px;
+        font-size: 10px;
+        position: absolute;
+        top: 200px;
+        right: -580px;
+        padding-left: 5px;
+    }
+
+    .eml {
+        position: absolute;
+        margin-top: 40px;
+        
+    }
+
+    .email h3 {
+        margin-top: 45px;
+        margin-left: 30px;
+    }
+    .fl{
+        color:white;
+        margin-left:50px;
+    }
+    .image4{
+        padding-left:70px;
+    }
+    .p7{
+        margin-top:40px;
+    }
+    .l1{
+       width:50%; 
+    }
+    .p11{
+        margin-left:-20px;
+        margin-top:5px;
+    }
+    .p111{
+        margin-left:-20px;
+        margin-top:5px;
+
+    }
+    @media (min-width: 1750px) and (max-width:2000px){
+      .sub-div{
+        padding-left:200px;
+      }
+      .card-cont{
+        margin-left:200px;
+      }
+      .cards{
+        margin-left:400px;
+      }
+      .third{
+        margin-left:370px;
+      }
+      .fifth{
+        margin-left:370px;
+      }
+      .image{
+        margin-left:530px;
+      }
+      .card-cont2{
+        margin-left:250px;
+        
+       
+    }
+    .card-cont3{
+        margin-left:250px;
+        
+    }.p3{
+        margin-right:60px;
+    }
+    .p5{
+        margin-right:60px;
+    }
+    }
+    @media (min-width: 1588px) and (max-width:1750px){
+
+        .sub-div{
+        margin-left:200px;
+      }
+      .card-cont{
+        margin-left:250px;
+      }
+      .cards{
+        margin-left:250px;
+      }
+      .third{
+        margin-left:250px;
+      }
+      .fifth{
+        margin-left:250px;
+      }
+      .image{
+        margin-left:360px;
+      }
+    }
+    @media (min-width: 1545px) and (max-width:1590px){
+        .sub-div{
+        margin-left:250px;
+      }
+      .card-cont{
+        margin-left:250px;
+      }
+      .cards{
+        margin-left:250px;
+      }
+      .third{
+        margin-left:250px;
+      }
+      .fifth{
+        margin-left:250px;
+      }
+      .image{
+        margin-left:360px;
+      }
+
+    }
+
+    @media (min-width: 1460px) and (max-width:1560px){
+        .sub-div{
+        margin-left:200px;
+      }
+      .card-cont{
+        margin-left:100px;
+      }
+      .cards{
+        margin-left:100px;
+      }
+      .third{
+        margin-left:120px;
+      }
+      .fifth{
+        margin-left:120px;
+      }
+      .image{
+        margin-left:200px;
+      }
+
+    }
+    @media (min-width: 1300px) and (max-width:1460px){
+        .sub-div{
+        margin-left:100px;
+      }
+      .card-cont{
+        margin-left:100px;
+      }
+      .cards{
+        margin-left:100px;
+      }
+      .third{
+        margin-left:20px;
+      }
+      .fifth{
+        margin-left:20px;
+      }
+      .image{
+        margin-left:60px;
+      }
+
+    }
+    @media (min-width: 1200px) and (max-width:1300px){
+        .sub-div{
+        margin-left:20px;
+      }
+      .card-cont{
+        margin-left:100px;
+      }
+      .cards{
+        margin-left:100px;
+      }
+      .third{
+        margin-left:40px;
+      }
+      .fifth{
+        margin-left:40px;
+      }
+      .image{
+        margin-left:20px;
+      }
+      .card-cont1{
+        margin-left:120px;
+      }
+      .p3{
+        margin-right:90px;
+      }
+      .p5{
+        margin-right:90px;
+      }
+     
+    }
+    @media (min-width: 1100px) and (max-width:1200px){
+        .sub-div{
+        margin-right:60px;
+      }
+      .card-cont{
+        margin-left:0px;
+      }
+      .cards{
+        margin-left:px;
+      }
+      .third{
+        margin-left:px;
+       
+      }
+      .fifth{
+        margin-left:px;
+        
+      }
+      .image{
+        margin-right:80px;
+      }
+      .filter{
+        margin-top:-70px;
+        margin-right:50px;
+      }
+      .card-cont{
+        margin-left:80px;
+      }
+      .card-cont2{
+        margin-left:100px;
+        margin-top:50px;
+       
+    }
+    .card-cont3{
+        margin-left:100px;
+        margin-top:90px;
+    }
+    .filter{
+        margin-top:80px;
+    }
+    .p3{
+        margin-right:60px;
+      }
+      .p5{
+        margin-right:60px;
+      }
+     
+
+    }
+    @media (min-width: 900px) and (max-width:1100px){
+        .sub-div{
+      
+        margin-top:-20px;
+      }
+      .card-cont{
+        margin-left:0px;
+      }
+      .cards{
+        margin-left:-30px;
+      }
+      .third{
+        margin-left:-20px;
+      }
+      .fifth{
+        margin-left:-30px;
+      }
+      .image{
+        margin-left:-200px;
+      }
+      .filter1{
+       margin-top:50px;
+      }
+      .card-cont2{
+        margin-left:100px;
+        margin-top:50px;
+       
+    }
+    .card-cont3{
+        margin-left:100px;
+        margin-top:90px;
+    }
+    .p3{
+        margin-right:60px;
+    }
+    .p5{
+        margin-right:60px;
+    }
+    .image{
+        margin-left:-100px;
+    }
+      
+    }
+
+    @media (min-width: 900px) and (max-width:1076px){
+        .sub-div{
+      
+      margin-top:-20px;
+    }
+    .card-cont2{
+        margin-left:100px;
+        margin-top:50px;
+       
+    }
+    .card-cont3{
+        margin-left:100px;
+        margin-top:90px;
+    }
+    .cards{
+        margin-left:100px;
+      }
+      .card-cont2{
+        margin-left:100px;
+        margin-top:50px;
+       
+    }
+    .card-cont3{
+        margin-left:100px;
+        margin-top:90px;
+    }
+    .p3{
+        margin-right:60px;
+    }
+    .p5{
+        margin-right:60px;
+    }
+    .image{
+        margin-left:-200px;
+    }
+    }
+    @media (min-width: 1000px) and (max-width:1080px){
+        .sub-div{
+      
+      margin-right:50px;
+    }
+    .cards{
+        margin-left:-90px;
+      }
+      .card-cont2{
+        margin-left:100px;
+        margin-top:50px;
+       
+    }
+    .card-cont3{
+        margin-left:100px;
+        margin-top:90px;
+    }
+    .p3{
+        margin-right:60px;
+    }
+    .p5{
+        margin-right:60px;
+    }
+
+    }
+    @media (min-width: 900px) and (max-width:1000px){
+        .sub-div{
+      
+      margin-right:50px;
+    }
+    .cards{
+        margin-left:-100px;
+      }
+      .card-cont2{
+        margin-left:100px;
+        margin-top:50px;
+       
+    }
+    .card-cont3{
+        margin-left:100px;
+        margin-top:90px;
+    }
+    .p3{
+        margin-right:60px;
+    }
+    .p5{
+        margin-right:60px;
+    }
+    }
+    @media (min-width: 900px) and (max-width:980px){
+        .sub-div{
+      
+      margin-right:50px;
+    }
+    .cards{
+        margin-left:-130px;
+      }
+      .card-cont2{
+        margin-left:100px;
+        margin-top:50px;
+       
+    }
+    .card-cont3{
+        margin-left:100px;
+        margin-top:90px;
+    }
+    .image{
+        margin-left:-250px;
+      }
+    }
+    @media (min-width: 900px) and (max-width:977px){
+        .sub-div{
+      
+      margin-right:50px;
+    }
+    .cards{
+        margin-left:-400px;
+      }
+    
+    .card-cont2{
+        margin-left:100px;
+        margin-top:50px;
+       
+    }
+    .card-cont3{
+        margin-left:100px;
+        margin-top:90px;
+    }
+   
+}
+
+    @media (min-width: 900px) and (max-width:950px){
+        .sub-div{
+      
+      margin-right:50px;
+    }
+    .cards{
+        margin-left:-130px;
+      }
+      .card-cont1{
+        margin-top:90px;
+       
+       margin-left:130px;
+       
+    }
+      .card-cont2{
+        margin-left:80px;
+        margin-top:50px;
+       
+    }
+    .card-cont3{
+        margin-left:80px;
+        margin-top:90px;
+    }
+    
+    }
+    @media (min-width: 850px) and (max-width:900px){
+        .sub-div{
+      
+      margin-right:50px;
+    }
+    .cards{
+        margin-left:-250px;
+      }
+      .card-cont1{
+        margin-top:90px;
+       
+       margin-left:130px;
+       
+    }
+      .card-cont2{
+        margin-left:80px;
+        margin-top:50px;
+       
+    }
+    .card-cont3{
+        margin-left:80px;
+        margin-top:90px;
+    }
+    .card1 {
+        height: 250px;
+        width: 200px;
+        background-color: #171717;
+        border-radius: 10px;
+        border: none;
+        margin-bottom:10px;
+        margin-left:330px;
+
+    }
+
+    .card2 {
+        height: 250px;
+        width: 200px;
+        background-color: #171717;
+        border-radius: 10px;
+        border: none;
+        margin-left:25px;
+    }
+
+    .card3 {
+        height: 250px;
+        width: 200px;
+        background-color: #171717;
+        border-radius: 10px;
+        border: none;
+        margin-left:25px;
+    }
+    
+    }
+    @media (min-width: 800px) and (max-width:850px){
+        .sub-div{
+      
+      margin-top:0px;
+    }
+    .cards{
+        margin-left:-290px;
+      }
+      .card-cont1{
+        margin-top:90px;
+       
+       margin-left:100px;
+       
+    }
+      .card-cont2{
+        margin-left:80px;
+        margin-top:50px;
+       
+    }
+    .card-cont3{
+        margin-left:80px;
+        margin-top:90px;
+    }
+    .card1 {
+        height: 250px;
+        width: 200px;
+        background-color: #171717;
+        border-radius: 10px;
+        border: none;
+        margin-bottom:10px;
+        margin-left:300px;
+
+    }
+
+    .card2 {
+        height: 250px;
+        width: 200px;
+        background-color: #171717;
+        border-radius: 10px;
+        border: none;
+        margin-left:20px;
+    }
+
+    .card3 {
+        height: 250px;
+        width: 200px;
+        background-color: #171717;
+        border-radius: 10px;
+        border: none;
+        margin-left:20px;
+    }
+    .btn{
+        margin-top:40px;
+
+    }
+   
+    
+    }
+
+
+
+
+    </style>
+    <body>
+        <div class="main">
+        <nav class="navbar">
+     <!-- LOGO -->
+     <div class="logo"><a href="front.html"> <img  class="img"src="new images/logo.png"></a></div>
+     <!-- NAVIGATION MENU -->
+     <ul class="nav-links">
+       <!-- USING CHECKBOX HACK -->
+       <input type="checkbox" id="checkbox_toggle" />
+       <label for="checkbox_toggle" class="hamburger">&#9776;</label>
+       <!-- NAVIGATION MENUS -->
+       <div class="menu"  style="font-size: 18px;    font-weight: bold;">
+         <li><a href="ourservice5.html">Service</a></li>
+         <li><a href="work1.html">Work</a></li>
+         <li class="services">
+           <a href="front.html">Blog</a>
+           <!-- DROPDOWN MENU -->
+           <ul class="dropdown">
+            </ul>
+         </li>
+         <li><a href="aboutus1.html">About Us</a></li>
+         <li><a href="ContactUs.html">Contact Us</a></li>
+       </div>
+     </ul>
+</div>
+            <div class="first">
+         <div class="h3">
+        <h1 style="font-size:46px;margin-left:-20px;">Video Producction</h1>
+        
+        <p class="p1" style="font-size: 21px;" >producing brand marketing using</p>
+        <p class="p11" style="font-size: 21px;" > Argumented reality,virtual reality,holographic</p>
+        <p class="p111" style="font-size: 21px;" > technology assesting companies in developing</p>
+         <button  class="btn" type="button">Try filter</button><br>
+       
+</div>
+            <div class="image">
+            <img src="new images/img2.jpeg" style="width:100%;height:200px;">
+</div>
+</div>
+      
+         <h2 class="filter" style="font-size: 46px;">Features</h2>
+         <div class="toplevel">
+         <div class="Secondlevel">
+            <div class="second">
+                <div class="image1">
+           <img  src="new images/img2.jpeg" style="width:100%;height:100px;">
+</div>
+<div class="title1">
+           <h2 class="title" style="font-size: 30px;">Title</h2>
+           <p class="p2" style="font-size: 18px;">Lorem ipsum dolor, sit amet consectetur adipisicing elit.<br> 
+            Ea officia officiis modi, voluptate explicabo mollitia<br>
+         adipisci quod consectetur, illum eveniet at veniam cum ipsa<br>
+         expedita ex! Corporis, aliquam nesciunt!<p>
+</div>
+</div>
+</div>
+<div class="tl">
+  <div class="third">
+           <img class="image1" src="new images/img2.jpeg" style="width:100%;height:100px;">
+</div>
+<div class="title2">
+     <h2 class="title2" style="font-size: 30px;">Title</h2>
+           <p class="p3" style="font-size: 18px;">Lorem ipsum dolor, sit amet consectetur adipisicing elit.<br> 
+            Ea officia officiis modi, voluptate explicabo mollitia<br>
+         adipisci quod consectetur, illum eveniet at veniam cum ipsa<br>
+         expedita ex! Corporis, aliquam nesciunt!<p>
+</div>
+</div>
+</div>
+
+<div class="midlevel">
+<div class="Thirdlevel">
+<div class="fourth">
+           <img class="image1" src="new images/img2.jpeg" style="width:100%;height:100px;">
+</div>
+<div class="title3">
+    <h2 class="title3" style="font-size: 30px;">Title</h2>
+           <p class="p4" style="font-size: 18px;">Lorem ipsum dolor, sit amet consectetur adipisicing elit.<br> 
+            Ea officia officiis modi, voluptate explicabo mollitia<br>
+         adipisci quod consectetur, illum eveniet at veniam cum ipsa<br>
+         expedita ex! Corporis, aliquam nesciunt!<p>
+</div>
+</div>
+<div class="Fourtlevel">
+<div class="fifth">
+           <img class="image4" src="new images/img2.jpeg" style="width:100%;height:100px;">
+</div>
+<div class="title4">
+    <h2 class="title4" style="font-size: 30px;">Title</h2>
+           <p class="p5" style="font-size: 18px;" >Lorem ipsum dolor, sit amet consectetur adipisicing elit.<br> 
+            Ea officia officiis modi, voluptate explicabo mollitia<br>
+         adipisci quod consectetur, illum eveniet at veniam cum ipsa<br>
+         expedita ex! Corporis, aliquam nesciunt!<p>
+</div>
+</div>
+</div>
+</div>
+
+
+
+ <h1 style="margin-top:120px;color:white;margin-left:80px;font-size: 46px;">Benefits</h1>
+
+ <div class="card-container">
+            <div class="cards">
+                <div class="card1">
+                    <div class="card-content1">
+                        <img style="height: 90px; width:90px; position:relative;top:-20px; left: 55px;"
+                            src="./new images/logo.png" alt="">
+                        <h3 style="text-align: center; position: relative;top:-20px ;font-size: 25px; color: #525252; ">Instagram AR Filters</h3>
+                        <!-- <p class="para1">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Inventore quisquam
+                            nam sint beatae
+                            voluptate quae velit eaque. Incidunt</p> -->
+                       
+                    </div>
+                </div>
+                <div class="card2">
+                    <div class="card-content2">
+                        <img style="height: 90px; width:90px; position:relative;top:-20px; left: 55px;"
+                            src="./new images/logo.png" alt="">
+                        <h3 style="text-align: center; position: relative;top:-20px ;font-size: 25px; color: #525252; ">Web Ar Experiences</h3>
+                        <!-- <p class="para2 ">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Inventore quisquam
+                            nam sint beatae
+                            voluptate quae velit eaque. Incidunt</p> -->
+                      
+                    </div>
+                </div>
+                <div class="card3">
+                    <div class="card-content3">
+                        <img style="height: 90px; width:90px; position:relative;top:-20px; left: 55px;"
+                            src="./new images/logo.png" alt="">
+                        <h3 style="text-align: center; position: relative;top:-20px ;font-size: 25px;  color: #525252;">Snapchat Ar Lenses</h3>
+                       
+                          
+                    </div>
+                </div>
+                
+ 
+                
+</div>
+</div>
+<h2  class="filter1"style="font-size:40px;margin-top:50px;color:white;margin-left:80px;">Our filters</h2>
+<div class="card-cont">
+   
+                    <div class="card-cont1">
+                        <img src="new images/mobile11.png" style="height:300px;">
+</div>
+<div class="card-cont2">
+<img src="new images/mobile11.png" style="height:380px;">
+</div>
+<div class="card-cont3">
+<img src="new images/mobile11.png" style="height:300px;">
+</div>
+</div>
+<div class="last">
+    <div class="l1">
+ <h3 style="color:white;margin-left:80px;font-size:46px;margin-top:10px;">FAQ</h3>
+
+
+<button class="accordion">Section 1</button>
+<div class="panel">
+  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+</div>
+
+<button class="accordion">Section 2</button>
+<div class="panel">
+  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+</div>
+
+<button class="accordion">Section 3</button>
+<div class="panel">
+  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+
+</div>
+</div>
+<div class="sub-div">
+        <div>
+            <p  style="cursor: context-menu;font-size: 46px;font-weight: bold;">
+                Contact Us
+            </p><br><br>
+            <div class="sub-d">
+                <input style="cursor: context-menu" type="text" placeholder="Name" class="inputbox"><br>
+                <input style="cursor: context-menu" type="text" placeholder="Email" class="inputbox"><br>
+                <input style="cursor: context-menu" type="text" placeholder="Contact No" class="inputbox"><br>
+                <input style="cursor: context-menu" type="text" placeholder="Leave a massage" class="inputb"><br>
+                <br><br>
+                <div>
+                    <a href=""><button style="cursor: pointer" class="btns">Apply</button></a>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    </div>
+
+
+<script>
+var acc = document.getElementsByClassName("accordion");
+var i;
+
+for (i = 0; i < acc.length; i++) {
+  acc[i].addEventListener("click", function() {
+    this.classList.toggle("active");
+    var panel = this.nextElementSibling;
+    if (panel.style.maxHeight) {
+      panel.style.maxHeight = null;
+    } else {
+      panel.style.maxHeight = panel.scrollHeight + "px";
+    } 
+  });
+}
+</script>
+
+
+</body>
+</html>
