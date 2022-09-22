@@ -1,0 +1,886 @@
+<!DOCTYPE html>
+<html translate="no">
+
+<head>
+    <meta name="google" content="notranslate">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: black;
+            width: 100%;
+            font-family: Lato, Helvetica, sans-serif;
+
+
+        }
+        a {
+ text-decoration: none;
+}
+li {
+ list-style: none;
+}
+.navbar {
+ display: flex;
+ align-items: center;
+ justify-content: space-between;
+ padding: 20px;
+ background-color:Black;
+ color: #fff;
+ overflow:hidden;
+ position:fixed;
+ width:100%;
+ top:0;
+ z-index:99;
+ 
+}
+.nav-links a {
+ color: #fff;
+}
+/* LOGO */
+
+/* NAVBAR MENU */
+.menu {
+ display: flex;
+ gap: 1em;
+ font-size: 18px;
+}
+.menu li:hover {
+ /* background-color: #4c9e9e; */
+ border-radius: 5px;
+ transition: 0.3s ease;
+ list-style:none;
+  text-decoration: none;
+}
+.menu li {
+ padding: 5px 14px;
+}
+/* DROPDOWN MENU */
+.services {
+ position: relative; 
+}
+.dropdown {
+ /* background-color: rgb(1, 139, 139); */
+ padding: 1em 0;
+ position: absolute; /*WITH RESPECT TO PARENT*/
+ display: none;
+ border-radius: 8px;
+ top: 35px;
+}
+.dropdown li + li {
+ margin-top: 10px;
+}
+.dropdown li {
+ padding: 0.5em 1em;
+ width: 8em;
+ text-align: center;
+}
+.dropdown li:hover {
+ /* background-color: #4c9e9e; */
+}
+.services:hover .dropdown {
+ display: block;
+}
+input[type=checkbox]{
+ display: none;
+} 
+/*HAMBURGER MENU*/
+.hamburger {
+ display: none;
+ font-size: 24px;
+ user-select: none;
+}
+/* APPLYING MEDIA QUERIES */
+@media (max-width: 768px) {
+  a {
+ text-decoration: none;
+}
+li {
+ list-style: none;
+}
+.menu { 
+ display:none;
+ position:fixed;
+ background-color:black;
+ right: 0;
+ left: 0;
+ 
+ height:100%;
+ text-align: center;
+ 
+}
+.menu li:hover {
+ display: inline-block;
+ /* background-color:#4c9e9e; */
+ transition: 0.3s ease;
+}
+.menu li + li {
+ margin-top: 12px;
+}
+input[type=checkbox]:checked ~ .menu{
+ display: block;
+}
+.hamburger {
+ display: block;
+}
+.dropdown {
+ left: 50%;
+ top: 30px;
+ transform: translateX(35%);
+}
+.dropdown li:hover {
+ /* background-color: #4c9e9e; */
+}
+}
+
+        /* Main content */
+        .container {
+            position: relative;
+            width: 5%;
+            margin-right: 850px;
+            margin-top: 100px;
+            cursor: context-menu;
+        }
+
+        .heading {
+            position: absolute;
+            left: -5px;
+            top: 220px;
+
+        }
+
+        .heading1 {
+            position: absolute;
+            left: -5px;
+            top: 220px;
+            z-index: 1
+        }
+
+        .hvrimg {
+            position: relative;
+            right: -15px;
+        }
+
+        .txt {
+            color: white;
+            font-size: 100px;
+            font-weight: bold;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+        }
+
+
+        .row {
+            display: -ms-flexbox;
+            /* IE10 */
+            display: flex;
+            -ms-flex-wrap: wrap;
+            /* IE10 */
+            flex-wrap: wrap;
+            padding: 0 4px;
+            margin-top: 100px;
+
+        }
+
+        /* Create four equal columns that sits next to each other */
+        /* ////////////////////////////////////////////////////////////////////////////////// */
+        .overlay {
+            position: relative;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            opacity: 0;
+            transition: .5s ease;
+        }
+
+        .img-wrp:hover .overlay {
+            opacity: 0.8;
+        }
+
+        .text {
+            color: white;
+            font-size: 15px;
+            position: absolute;
+            left: 175px;
+            top: -175px;
+            height: 350px;
+            width: 350px;
+            background-color: black;
+            -webkit-transform: translate(-50%, -50%);
+            -ms-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
+            /* text-align: center; */
+            padding: 0px 40px 0px 40px;
+        }
+
+        ul {
+            padding: 0px;
+        }
+
+        .responsive-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            grid-gap: 2rem;
+         
+        }
+
+        .wrapper {
+            max-width: 750px;
+            margin-left: auto;
+            margin-right: auto;
+            height: auto;
+
+        }
+
+        .g-grid {
+            justify-content: center;
+            /* padding: 50px; */
+            margin-top: 20px;
+        }
+
+        .responsive-grid li {
+            background-color: grey;
+            border: 2px;
+            list-style: none;
+            height: 350px;
+            width: 350px;
+            display: flex;
+            justify-content: center;
+        }
+
+        /* /////////////////////////////////////////////////////////////////////////////////////////// */
+        .container {
+            position: relative;
+            width: 5%;
+            margin-right: 850px;
+            margin-top: 100px;
+            cursor: context-menu;
+        }
+
+        .overlays {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            opacity: 0;
+            transition: .5s ease;
+            cursor: context-menu;
+            /* margin-right:850px;
+  margin-top:0px; */
+
+        }
+
+        .container:hover .overlays {
+            opacity: 1;
+        }
+
+        .heading {
+            position: absolute;
+            left: -5px;
+            top: 220px;
+
+        }
+
+        .heading1 {
+            position: absolute;
+            left: -5px;
+            top: 220px;
+            z-index: 1
+        }
+
+        .hvrimg {
+            position: relative;
+            right: -15px;
+        }
+
+        /* //////////////////////////////////////////////////////////////////////////////////////////////////////// */
+        @media (min-width:1901px){
+          .container{
+            margin: auto;
+          }
+        }
+        @media (max-width:1900px) and (min-width:1800px) {
+
+            .container {
+                margin-left: 690px;
+            }
+        }
+
+        @media (max-width:1799px) and (min-width:1750px) {
+            .container {
+                margin-left: 670px;
+            }
+
+        }
+
+        @media (max-width:1749px) and (min-width:1700px) {
+            .container {
+                margin-left: 660px;
+            }
+
+        }
+
+        @media (max-width:1701px) and (min-width:1649px) {
+            .container {
+                margin-left: 640px;
+            }
+
+        }
+
+        @media (max-width:1648px) and (min-width:1600px) {
+            .container {
+                margin-left: 620px;
+            }
+
+        }
+
+        @media (max-width:1599px) and (min-width:1500px) {
+            .container {
+                margin-left: 540px;
+            }
+        }
+
+        @media (max-width:1499px) and (min-width:1400px) {
+            .container {
+                margin-left: 510px;
+            }
+        }
+
+        @media (max-width:1399px) and (min-width:1300px) {
+            .container {
+                margin-left: 480px;
+            }
+        }
+
+        @media (max-width:1299px) and (min-width:1200px) {
+            .container {
+                margin-left: 420px;
+            }
+        }
+
+        @media (max-width:1199px) and (min-width:1100px) {
+            .container {
+                margin-left: 380px;
+            }
+        }
+
+        @media (max-width:1099px) and (min-width:1000px) {
+            .container {
+                margin-left: 320px;
+            }
+        }
+
+        @media (max-width:999px) and (min-width:900px) {
+            .container {
+                margin-left: 240px;
+            }
+        }
+
+        @media (max-width:899px) and (min-width:800px) {
+            .container {
+                margin-left: 200px;
+            }
+        }
+
+            @media (max-width:768px) {
+    .container {
+      margin-left: 180px;
+    }
+
+    .g-grid {
+      height: auto;
+      width: 680px;
+      margin-left: 8px;
+    }
+
+    .img-wrp {
+      width: 250px !important;
+      margin-left: 15px !important;
+    }
+
+    .img-wrp img {
+      width: 350px !important;
+      /* height: 350px; */
+    }
+
+    .text {
+      width: 355px !important;
+      /* margin-left:9px; */
+    }
+
+    .responsive-grid {
+      /* display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); */
+      grid-gap: 3rem;
+    }
+  }
+  @media (min-width:1900px) and (max-width:3500px) {
+    .container{
+        margin: auto;
+        align-items: center;
+        max-width: 1500px;
+    text-align: center;
+    left: -130px;
+    top: 10px;
+        
+    }
+
+    
+
+  }
+
+        /* ////////////////////////////////////////////////////////////////////////////////////////////////////////////// */
+    </style>
+</head>
+
+<body>
+    <div class="main"> 
+        <nav class="navbar">
+             <!-- LOGO -->
+             <div class="logo"><a href="index.html"> <img  class="img"src="new images/logo.png"></a></div>
+             <!-- NAVIGATION MENU -->
+             <ul class="nav-links">
+               <!-- USING CHECKBOX HACK -->
+               <input type="checkbox" id="checkbox_toggle" />
+               <label for="checkbox_toggle" class="hamburger">&#9776;</label>
+               <!-- NAVIGATION MENUS -->
+               <div class="menu" style="font-size: 18px;    font-weight: bold;">
+                 <li><a href="ourservice5.html">Service</a></li>
+                 <li><a href="work1.html">Work</a></li>
+                 <li class="services">
+                   <a href="/front.html">Blog</a>
+                   <!-- DROPDOWN MENU -->
+                   <ul class="dropdown">
+                    </ul>
+                 </li>
+                 <li><a href="aboutus1.html">About Us</a></li>
+                 <li><a href="ContactUs.html">Contact Us</a></li>
+               </div>
+             </ul>
+        </div>
+    <div>
+        <div class="container">
+            <div class="heading">
+                <h1 class="txt">Portfolio</h1>
+            </div>
+            <img src="new images/logo2.png" style="height: 500px; width:500px;" alt="">
+            <div class="overlays">
+                <div class="heading1">
+                    <h1 class="txt">Portfolio</h1>
+                </div>
+                <img class="hvrimg" src="new images/logo3.png" style="height: 500px; width:500px;" alt="">
+            </div>
+        </div>
+        <div class="g-grid">
+            <div class="wrapper">
+                <ul class="responsive-grid">
+                    <div class="img-wrp">
+                        <li><img src="new images/img1.jpeg" style="height:350px;width:350px" alt="">
+                        </li>
+                        <div class="overlay">
+                            <a href="tataresponsive.html">
+                                <div class="text">
+                                    <div class="client" ><h1 style="font-size: 35px;font-weight:bold;padding: 25px 30px;text-align: center;">
+                                        Tvs euro grip tyre..   
+                                    </h1></div> &#8226;In busy venues such as supermarkets, diagnostic centres, and pharmacies, experientialetc performed a social experiment for TVS euro grip tyres.<br>
+                                    &#8226;We set up a floor runner and motion sensors at a safe distance from each other in the locations where the queues would form. ....Read more<br>
+                                   </div>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="img-wrp">
+                        <li><img src="new images/img2.jpeg" style="height:350px;width:350px" alt="">
+                        </li>
+                        <div class="overlay">
+                            <a href="tataresponsive.html">
+                                <div class="text">
+                                    <div class="client" ><h1 style="font-size: 35px;font-weight:bold;padding:25px 30px;text-align: center;">
+                                        HP filters   
+                                    </h1></div> &#8226; HP asked experientialetc to create a non-traditional Christmasy filter; taking matters into our own hands, we conceptualised a filter with nearly ten effects integrated into it<br>
+                                    &#8226;; the user can choose an effect based on his or her preferences....Read more<br>
+                                    
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="img-wrp">
+                        <li><img src="new images/img3.jpeg" style="height:350px;width:350px" alt="">
+                        </li>
+                        <div class="overlay">
+                            <a href="tataresponsive.html">
+                            
+                                <div class="text">   <div class="client" ><h1 style="font-size: 35px;font-weight:bold;padding: 25px 30px;text-align: center;">
+                                    Cadbury
+   
+                                </h1></div>&#8226;After running into complications in interacting with consumers, Cadbury made an approach to us to get a resilient solution. <br>
+                                &#8226;. We conceptualised an interactive application that handpicked Instagram feeds from the target audience with whom Silk wished to be connected....Read more<br>
+                                    </div>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="img-wrp">
+                        <li><img src="new images/img1.jpeg" style="height:350px;width:350px" alt="">
+                        </li>
+                        <div class="overlay">
+                            <a href="tataresponsive.html">
+                                <div class="text">   <div class="client" ><h1 style="font-size: 35px;font-weight:bold;padding: 25px 30px;text-align: center;">
+                                    Sunpharma   
+                                </h1></div>&#8226;Creating awareness can be a difficult task, and this was the problem that Sunpharma was facing. As a highly experienced agency,<br>
+                                &#8226; , we were approached for a solution, and we conceptualised an AR-based awareness program that disseminated medical information through a filter with floating and moving informational words and objects. ...Read more
+                                <br>
+                               </div>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="img-wrp">
+                        <li><img src="new images/img2.jpeg" style="height:350px;width:350px" alt="">
+                        </li>
+                        <div class="overlay">
+                            <a href="tataresponsive.html">
+                                <div class="text">   <div class="client" ><h1 style="font-size: 35px;font-weight:bold;padding:25px 30px;text-align: center;">
+                                    Mirzapur
+   
+                                </h1></div>&#8226; The Mirzapur production team approached us searching for an innovative way to improve their social media presence, <br>
+                                &#8226; The Mirzapur  and we produced AR packaging in which customers receiving their goods would receive scannable codes that would take them to a personalised message pre-recorded by Ali Faizal.
+                                .... Read more <br>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="img-wrp">
+                        <li><img src="new images/img3.jpeg" style="height:350px;width:350px" alt="">
+                        </li>
+                        <div class="overlay">
+                            <a href="tataresponsive.html">
+                                <div class="text">   <div class="client" ><h1 style="font-size: 35px;font-weight:bold;padding: 25px 30px;text-align: center;">
+                                    Chhichhore    
+                                </h1></div>&#8226;The crew of We were contacted by the production team of the well-known Bollywood film Chhichhore approached us searching for innovative ways because they wanted to promote their movie.<br>
+                                    &#8226; Taking matters into our own hands, we offered to establish a strong social media presence. We suggested using a public space, having a technologically advanced solution for a BTL activity in a public space....Read more<br>
+                                   </div>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="img-wrp">
+                        <li><img src="new images/img1.jpeg" style="height:350px;width:350px" alt="">
+                        </li>
+                        <div class="overlay">
+                            <a href="tataresponsive.html">
+                                <div class="text">   <div class="client" ><h1 style="font-size: 35px;font-weight:bold;padding: 25px 30px;text-align: center;">
+                                    Solis yamara   
+                                </h1></div>&#8226;One of the most well-known tractor manufacturers, Solis Yamara Tractors, was searching for a unique solution for their new product launch event as they prepared to debut their new line of tractors.<br>
+                                &#8226; . When experientialetc was contacted with the goal of finding out regarding their recently released tractor  line ....Read more<br>
+                               </div>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="img-wrp">
+                        <li><img src="new images/img2.jpeg" style="height:350px;width:350px" alt="">
+                        </li>
+                        <div class="overlay">
+                            <a href="tataresponsive.html">
+                                <div class="text">   <div class="client" ><h1 style="font-size: 35px;font-weight:bold;padding: 25px 30px;text-align: center;">
+                                  
+MI garba campaign
+   
+                                </h1></div>&#8226;eager to establish a significant social media presence. The well-known electronics brand contacted us looking for a creative solution.<br>
+                                &#8226; After deliberating, we came up with a breakthrough for a unique.  and creative solution by launching a festive and trendy campaign with the ongoing festival of Navratri ....Read more<br>
+                              </div>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="img-wrp">
+                        <li><img src="new images/img3.jpeg" style="height:350px;width:350px" alt="">
+                        </li>
+                        <div class="overlay">
+                            <a href="tataresponsive.html">
+                                <div class="text">   <div class="client" ><h1 style="font-size: 35px;font-weight:bold;padding:25px 30px;text-align: center;">
+                                    MI XL TV slot machine
+   
+                                </h1></div>&#8226; MI wanted to launch their brand-new product, the MI XL television, digitally and wanted to do it in a distinctive and creative way where customers would even have the chance to interact with the brand and win prizes.<br>
+                                &#8226; We came up with an innovative idea to develop a web-based  slot machine .... Read more<br>
+                               </div>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="img-wrp">
+                        <li><img src="new images/img1.jpeg" style="height:350px;width:350px" alt="">
+                        </li>
+                        <div class="overlay">
+                            <a href="tataresponsive.html">
+                                <div class="text">   <div class="client" ><h1 style="font-size: 35px;font-weight:bold;padding: 25px 30px;text-align: center;">
+                                    MI note 10     
+                                </h1></div>&#8226; MI had a fresh item. the MI note 10 series to launch digitally, we designed another web-based slot machine and offered consumers the chance to win the brand-new product free of charge.<br>
+                                &#8226;  This time, we allowed players try their luck and we also decreased the likelihood of losing. .... Read more
+                                <br>
+                            </div>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="img-wrp">
+                        <li><img src="new images/img2.jpeg" style="height:350px;width:350px" alt="">
+                        </li>
+                        <div class="overlay">
+                            <a href="tataresponsive.html">
+                                <div class="text">   <div class="client" ><h1 style="font-size: 35px;font-weight:bold;padding: 25px 30px;text-align: center;">
+                                    Jio AR packaging    
+                                </h1></div>&#8226;The reliance-owned communication and technology company Jio was trying to disrupt the conventional ways of its deliveries and improve consumer engagement.<br>
+                                &#8226; Jio then contacted us in an effort to find a solution and innovate on how their packaging  operated previously..... Read more</div>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="img-wrp">
+                        <li><img src="new images/img3.jpeg" style="height:350px;width:350px" alt="">
+                        </li>
+                        <div class="overlay">
+                            <a href="tataresponsive.html">
+                                <div class="text">   <div class="client" ><h1 style="font-size: 35px;font-weight:bold;padding: 25px 30px;text-align: center;">
+                                    Blackberry sale    
+                                </h1></div>&#8226;the brand of urban and fashionable men's clothing Blackberry had already declared their sale period, but they had the idea to show and market it in a much more original and creative way.<br>
+                                &#8226; Blackberry then contacted us to help them attain their idea.  .... Read more<br>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="img-wrp">
+                        <li><img src="new images/img2.jpeg" style="height:350px;width:350px" alt="">
+                        </li>
+                        <div class="overlay">
+                            <a href="tataresponsive.html">
+                                <div class="text">   <div class="client" ><h1 style="font-size: 35px;font-weight:bold;padding: 25px 30px;text-align: center;">
+                                    The brew corner
+  
+                                </h1></div>&#8226;A little deli at the corner of the street called the Brew Corner, one of the first users of the Live Glass, was seeking for a means to showcase and present their specialties in a distinctive way. <br>
+                                &#8226;  The live glass that we set up turned out to be the most beneficial in terms of drawing consumers. ....Read more <br>
+                            </div>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="img-wrp">
+                        <li><img src="new images/img3.jpeg" style="height:350px;width:350px" alt="">
+                        </li>
+                        <div class="overlay">
+                            <a href="tataresponsive.html">
+                                <div class="text">   <div class="client" ><h1 style="font-size: 35px;font-weight:bold;padding: 25px 30px;text-align: center;">
+                                    The coffee bean
+  
+                                </h1></div>&#8226;The coffee shop, Coffee Bean, contacted us seeking for a way to do something unusual about their store hoarding display. <br>
+                                &#8226; They were striving for something special that not really anybody has done before at any coffee shop outlet..... Read more<br>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="img-wrp">
+                        <li><img src="new images/img2.jpeg" style="height:350px;width:350px" alt="">
+                        </li>
+                        <div class="overlay">
+                            <a href="tataresponsive.html">
+                                <div class="text">   <div class="client" ><h1 style="font-size: 35px;font-weight:bold;padding: 25px 30px;text-align: center;">
+                                    Carnival cinema
+    
+                                </h1></div>&#8226;Technology diffusion is just as crucial as technology itself. The strategic alliance with Carnival Cinemas helped us expand the awareness of HOLOVSNS in several venues across 5 cities, resulting in increased astonishment. ....Read more
+                                <br>
+                               </div>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="img-wrp">
+                        <li><img src="new images/img3.jpeg" style="height:350px;width:350px" alt="">
+                        </li>
+                        <div class="overlay">
+                            <a href="tataresponsive.html">
+                                <div class="text">   <div class="client" ><h1 style="font-size: 35px;font-weight:bold;padding: 25px 30px;text-align: center;">
+                                    Charag din
+  
+                                </h1></div>&#8226;What could be better than having your collection in the storefront? With its amazing range of shirts, Charaghdin sought a way to enable its target market to stay current with fashion. we  implemented a fashion parade directly on the store display utilising DIGIPLAY to amplify the effect with cutting-edge animation. .... Read more
+                                <br>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="img-wrp">
+                        <li><img src="new images/img2.jpeg" style="height:350px;width:350px" alt="">
+                        </li>
+                        <div class="overlay">
+                            <a href="tataresponsive.html">
+                                <div class="text">   <div class="client" ><h1 style="font-size: 35px;font-weight:bold;padding: 25px 30px;text-align: center;">
+                                   chroma
+    
+                                </h1></div>&#8226;chroma the chain of electronics store have had multiple creative ways of displaying their products but they wanted to step it up a notch in terms of displaying their products,<br>
+                                &#8226; we gave them a solution to use some of our holographic technology that would help them display more than one product at a time and the holographic  imagery being unique itself would do the job of catching consumers eyes 
+                                .... Read more 
+                                <br>
+                               </div>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="img-wrp">
+                        <li><img src="new images/img3.jpeg" style="height:350px;width:350px" alt="">
+                        </li>
+                        <div class="overlay">
+                            <a href="tataresponsive.html">
+                                <div class="text">   <div class="client" ><h1 style="font-size: 35px;font-weight:bold;padding: 25px 30px;text-align: center;">
+                                    Deepali designs and exhibits
+
+  
+                                </h1></div>&#8226;At the largest event exhibition in the nation, held at Nesco, one of the largest fabrication and event companies in India trusted us to decorate their canter with synchronised HOVSNS. ....Read more
+
+                                <br>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="img-wrp">
+                        <li><img src="new images/img2.jpeg" style="height:350px;width:350px" alt="">
+                        </li>
+                        <div class="overlay">
+                            <a href="tataresponsive.html">
+                                <div class="text">   <div class="client" ><h1 style="font-size: 35px;font-weight:bold;padding: 25px 30px;text-align: center;">
+                                    Charagh din
+
+    
+                                </h1></div>&#8226;We were contacted by Charaghdin, a clothing company, asking for a unique answer to their request to make young people aware of the need of keeping up with the latest fashion trends. They had their most recent arrivals continuously displayed on the digiplay
+                                <br>
+                                &#8226; , giving passersby a good look at the display and allowing them to learn more about the store and the fashion trends so that people are able to  .... Read more <br>
+                               </div>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="img-wrp">
+                        <li><img src="new images/img3.jpeg" style="height:350px;width:350px" alt="">
+                        </li>
+                        <div class="overlay">
+                            <a href="tataresponsive.html">
+                                <div class="text">   <div class="client" ><h1 style="font-size: 35px;font-weight:bold;padding: 25px 30px;text-align: center;">
+                                    Disney 
+
+  
+                                </h1></div>&#8226;With their new instalment of the Avengers franchise, Marvel wanted to set up distinctive displays around Mumbai, and as the best at providing digital solutions,
+                                <br>
+                                &#8226; we were approached by Marvel to help set up displays. Being one of our dream clients, we were honoured to provide display solution to one of the most renowned digital and animation studios.
+                                .... Read more<br>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="img-wrp">
+                        <li><img src="new images/img2.jpeg" style="height:350px;width:350px" alt="">
+                        </li>
+                        <div class="overlay">
+                            <a href="tataresponsive.html">
+                                <div class="text">   <div class="client" ><h1 style="font-size: 35px;font-weight:bold;padding: 25px 30px;text-align: center;">
+                                    Social( the flea bazaar cafe
+
+    
+                                </h1></div>&#8226;one of the biggest pub chains in the nation Social needed innovative ways to promote and showcase their new initiative, the flea market café, which was a side project. After discussing this, we came up with the concept of having them  utilise a device .... Read more<br>
+                               </div>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="img-wrp">
+                        <li><img src="new images/img3.jpeg" style="height:350px;width:350px" alt="">
+                        </li>
+                        <div class="overlay">
+                            <a href="tataresponsive.html">
+                                <div class="text">   <div class="client" ><h1 style="font-size: 35px;font-weight:bold;padding: 25px 30px;text-align: center;">
+                                    Food memories
+
+  
+                                </h1></div>&#8226;As crazy as it sounds, the brand food memories had the idea to combine almost all of the flavours of India into one plate. The idea was successful, and food critics praised the dish highly.
+                                <br>
+                                &#8226; However, food memories needed a way to display and advertise the dish because it sounded strange and unfamiliar.... Read more<br>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="img-wrp">
+                        <li><img src="new images/img2.jpeg" style="height:350px;width:350px" alt="">
+                        </li>
+                        <div class="overlay">
+                            <a href="tataresponsive.html">
+                                <div class="text">   <div class="client" ><h1 style="font-size: 35px;font-weight:bold;padding: 25px 30px;text-align: center;">
+                                    Four fountains spa
+
+    
+                                </h1></div>&#8226;Nothing compares to a spa day during the height of the monsoon, and four fountains spa needed a way to display their spa at the front desk. Since the content playing on the holovsn appeared to be floating in midair,<br>
+                                &#8226; wmany people stopped to take a good look at the spa  and thought it to be extremely interesting,  .... Read more
+                                <br>
+                            
+                               </div>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="img-wrp">
+                        <li><img src="new images/img3.jpeg" style="height:350px;width:350px" alt="">
+                        </li>
+                        <div class="overlay">
+                            <a href="tataresponsive.html">
+                                <div class="text">   <div class="client" ><h1 style="font-size: 35px;font-weight:bold;padding: 25px 30px;text-align: center;">
+                                    Tata Motors Ramadan Special
+
+  
+                                </h1></div>&#8226;It’s difficult to be away from family, especially during festivals. In order to celebrate Ramadan with the migrant workers in a unique and special way, Tata Motors got in touch with us. We wanted to make the workers feel close to home .... Read more <br>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="img-wrp">
+                        <li><img src="new images/img2.jpeg" style="height:350px;width:350px" alt="">
+                        </li>
+                        <div class="overlay">
+                            <a href="tataresponsive.html">
+                                <div class="text">   <div class="client" ><h1 style="font-size: 35px;font-weight:bold;padding: 25px 30px;text-align: center;">
+                                    MI EEEONAMIONAM Campaign
+
+    
+                                </h1></div>&#8226;To celebrate the Onam festival, MI asked us to create a variety of web-based Augmented Reality Filters for almost everyone. 
+                                <br>
+                                &#8226; A web-based AR filter can be accessed by going to a specific URL. .... Read more
+                                <br>
+                            
+                               </div>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="img-wrp">
+                        <li><img src="new images/img3.jpeg" style="height:350px;width:350px" alt="">
+                        </li>
+                        <div class="overlay">
+                            <a href="tataresponsive.html">
+                                <div class="text">   <div class="client" ><h1 style="font-size: 35px;font-weight:bold;padding: 25px 30px;text-align: center;">
+                                    Mad Over Donuts
+
+  
+                                </h1></div>&#8226;Mad Over Donuts, known for its mouth-watering donuts, has introduced three new varieties. They approached us in order to spread the word about the delicious donuts. We set up a HOLOVSN at Church Street, Bangalore to showcase the delectable donuts. The HOLOVSN, which was  put up in grid configuration,
+                                .... Read more <br>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+
+    </div>
+    </div>
+    </div>
+
+
+
+    </div>
+</body>
+
+</html>
