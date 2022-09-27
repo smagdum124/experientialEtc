@@ -1,0 +1,1042 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
+    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    @font-face{
+        font-family: latoLight;
+        src: url(Lato/Lato-Light.ttf);
+    }
+    @font-face{
+        font-family: latoRegular;
+        src: url(Lato/Lato-Regular.ttf);
+    }
+    @font-face{
+        font-family: latoBold;
+        src: url(Lato/Lato-Bold.ttf);
+    }
+
+    body {
+      background-color: black;
+      width: 100%;
+    }
+
+    a {
+      text-decoration: none;
+    }
+
+    li {
+      list-style: none;
+    }
+
+    .navbar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 20px;
+      background-color: Black;
+      color: #fff;
+      overflow: hidden;
+      position: fixed;
+      width: 100%;
+      top: 0;
+      z-index: 99;
+
+    }
+
+    .nav-links a {
+      color: #fff;
+    }
+
+    /* LOGO */
+
+    /* NAVBAR MENU */
+    .menu {
+      display: flex;
+      gap: 1em;
+      font-size: 18px;
+    }
+
+    .menu li:hover {
+      /* background-color: #4c9e9e; */
+      border-radius: 5px;
+      transition: 0.3s ease;
+      list-style: none;
+      text-decoration: none;
+    }
+
+    .menu li {
+      padding: 5px 14px;
+    }
+
+    /* DROPDOWN MENU */
+    .services {
+      position: relative;
+    }
+
+    .dropdown {
+      /* background-color: rgb(1, 139, 139); */
+      padding: 1em 0;
+      position: absolute;
+      /*WITH RESPECT TO PARENT*/
+      display: none;
+      border-radius: 8px;
+      top: 35px;
+    }
+
+    .dropdown li+li {
+      margin-top: 10px;
+    }
+
+    .dropdown li {
+      padding: 0.5em 1em;
+      width: 8em;
+      text-align: center;
+    }
+
+    .dropdown li:hover {
+      /* background-color: #4c9e9e; */
+    }
+
+    .services:hover .dropdown {
+      display: block;
+    }
+
+    input[type=checkbox] {
+      display: none;
+    }
+
+    /*HAMBURGER MENU*/
+    .hamburger {
+      display: none;
+      font-size: 24px;
+      user-select: none;
+    }
+
+    /* APPLYING MEDIA QUERIES */
+    @media (max-width: 768px) {
+      a {
+        text-decoration: none;
+      }
+
+      li {
+        list-style: none;
+      }
+
+      .menu {
+        display: none;
+        position: fixed;
+        background-color: black;
+        right: 0;
+        left: 0;
+
+        height: 100%;
+        text-align: center;
+
+      }
+
+      .menu li:hover {
+        display: inline-block;
+        /* background-color:#4c9e9e; */
+        transition: 0.3s ease;
+      }
+
+      .menu li+li {
+        margin-top: 12px;
+      }
+
+      input[type=checkbox]:checked~.menu {
+        display: block;
+      }
+
+      .hamburger {
+        display: block;
+      }
+
+      .dropdown {
+        left: 50%;
+        top: 30px;
+        transform: translateX(35%);
+      }
+
+      .dropdown li:hover {
+        /* background-color: #4c9e9e; */
+      }
+    }
+
+    .container1 {
+      position: relative;
+      width: 5%;
+      /* left: 50px; */
+    }
+
+    .overlay {
+      position: absolute;
+      top: -170px;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      opacity: 0;
+      transition: .5s ease;
+
+    }
+
+    .container1:hover .overlay {
+      opacity: 1;
+      transition: 0.5s;
+
+
+    }
+
+    .heading {
+      position: absolute;
+      left: 480px;
+      top: 200px;
+      background-color: black;
+      width: 360px;
+      height: 120px;
+      text-align: center;
+      cursor: context-menu;
+    }
+
+    .heading2 {
+      text-align: center;
+      position: absolute;
+      left: 480px;
+      top: 50px;
+      background-color: black;
+      width: 350px;
+      height: 450px;
+      cursor: context-menu;
+      text-align: center;
+    }
+
+    .txt {
+      position: relative;
+      top: -220px;
+      color: white;
+      font-size: 120px;
+      font-weight: bold;
+      font-family: Verdana, Geneva, Tahoma, sans-serif;
+    }
+
+    .txt2 {
+      position: relative;
+      top: 100px;
+      color: white;
+      font-size: 120px;
+      font-weight: bold;
+      font-family: Verdana, Geneva, Tahoma, sans-serif;
+    }
+
+    /* APPLYING caption */
+    .caption {
+      text-align: center;
+      color: white;
+      position: relative;
+      top: 350px;
+      left: 10px;
+    }
+
+    h1 {
+      font-size: 100px;
+      margin-top: 200px;
+    }
+
+    h2 {
+      font-size: 35px;
+
+    }
+
+    h3 {
+      font-size: 30px;
+      margin-top: 5px;
+
+    }
+
+    .Img {
+      margin-top: 330px;
+    }
+
+    .img1 {
+      margin-left: 48.8%;
+      position: relative;
+      top: 100px;
+      height: 20px;
+    }
+
+    .img3 {
+            margin-top: 180px;
+            height: 300px;
+            left: 200px;
+            position: relative;
+
+        }
+
+
+    .who {
+      margin-top: 30px;
+      height: 550px;
+      display: flex;
+
+    }
+
+    .wleft {
+      width: 48%;
+
+      height: 550px;
+
+    }
+
+    .wright {
+      width: 50%;
+
+      height: 550px;
+
+    }
+
+    .img3 {
+      margin-top: 180px;
+      position: relative;
+
+    }
+
+    .img4 {
+      position: relative;
+      top: -250px;
+      left: 250px;
+      height: 140px;
+    }
+
+    .caption1 {
+      color: white;
+      margin-top: 140px;
+
+    }
+
+    .caption1 h1 {
+      font-size: 50px;
+      /* margin-left: 390px; */
+      margin-left: 338px;
+      z-index: 99;
+
+    }
+
+    .caption1 p {
+      font-size: 22px;
+      margin-left: 150px;
+      padding-top: 10px;
+      z-index: 99;
+      text-align: right;
+    }
+
+    .what {
+      display: flex;
+      height: 550px;
+
+    }
+
+    .caption2 {
+      color: white;
+      margin-top: 140px;
+
+    }
+
+    .caption2 h1 {
+      font-size: 50px;
+      padding-left: 50px;
+
+    }
+
+    .caption2 p {
+      font-size: 22px;
+      margin-left: 50px;
+      padding-top: 10px;
+    }
+
+    .c1 {
+      color: white;
+      margin-left: 600px;
+      margin-top: 30px;
+    }
+    .btn{
+      position: relative;
+      left: 580px;
+      top: 130px;
+      
+    }
+
+    /* footer css */
+    footer {
+      width: 100%;
+      position: relative;
+      bottom: 0;
+      left: 0;
+      top: 50px;
+      background: #111;
+    }
+
+    footer .content {
+      max-width: 1350px;
+      margin: auto;
+      padding: 20px;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+    }
+
+    footer .content p,
+    a {
+      color: #fff;
+    }
+
+    footer .content .box {
+      width: 25%;
+      transition: all 0.4s ease;
+    }
+
+    footer .content .topic {
+      font-size: 22px;
+      font-weight: 600;
+      color: #fff;
+      margin-bottom: 16px;
+
+    }
+
+    footer .content p {
+      text-align: justify;
+    }
+
+    footer .content .lower .topic {
+      margin: 24px 0 5px 0;
+    }
+
+    footer .content .lower i {
+      padding-right: 16px;
+    }
+
+    footer .content .middle {
+      padding-left: 0px;
+    }
+
+    footer .content .middle a {
+      line-height: 32px;
+    }
+
+    footer .content .right input[type="text"] {
+      height: 45px;
+      width: 100%;
+      outline: none;
+      color: #d9d9d9;
+      background: #000;
+      border-radius: 5px;
+      padding-left: 10px;
+      font-size: 17px;
+      border: 2px solid #222222;
+    }
+
+    footer .content .right input[type="submit"] {
+      height: 42px;
+      width: 100%;
+      font-size: 18px;
+      color: #d9d9d9;
+      background: grey;
+      outline: none;
+      border-radius: 5px;
+      letter-spacing: 1px;
+      cursor: pointer;
+      margin-top: 12px;
+      /* border: 2px solid #eb2f06; */
+      transition: all 0.3s ease-in-out;
+    }
+
+    .content .right input[type="submit"]:hover {
+      background: none;
+      /* color: #eb2f06; */
+    }
+
+    footer .content .media-icons a {
+      font-size: 16px;
+      height: 45px;
+      width: 45px;
+      display: inline-block;
+      text-align: center;
+      line-height: 43px;
+      border-radius: 5px;
+      /* border: 2px solid #222222; */
+      margin: 30px 5px 0 0;
+      transition: all 0.3s ease;
+    }
+
+    .content .media-icons a:hover {
+      /* border-color: #eb2f06; */
+    }
+
+    footer .bottom {
+      width: 100%;
+      text-align: right;
+      color: #d9d9d9;
+      padding: 0 40px 5px 0;
+    }
+
+    footer .bottom a {
+      /* color: #eb2f06; */
+    }
+
+    footer a {
+      transition: all 0.3s ease;
+    }
+
+    footer a:hover {
+      /* color: #eb2f06; */
+    }
+
+    @media (max-width:1100px) {
+      footer .content .middle {
+        padding-left: 50px;
+      }
+    }
+
+    @media (max-width:950px) {
+      footer .content .box {
+        width: 50%;
+      }
+
+      .content .right {
+        margin-top: 40px;
+      }
+    }
+
+    @media (max-width:560px) {
+      footer {
+        position: relative;
+      }
+
+      footer .content .box {
+        width: 100%;
+        margin-top: 30px;
+      }
+
+      footer .content .middle {
+        padding-left: 0;
+      }
+    }
+    .inp1{
+      margin: 10px 0px;
+    }
+    .inp2{
+      margin: 10px 0px;
+    }
+    .inp3{
+      margin: 10px 0px;
+    
+    }
+
+
+
+
+
+
+    /* ///////////client slider///////////////////////////////// */
+    .clint-slider {
+      height: 500px;
+      width: 900px;
+      margin-left: 220px;
+      border-radius: 20px;
+      margin-top: 50px;
+
+    }
+
+    .carousel-control-prev {
+      margin-left: -140px;
+    }
+
+    .carousel-control-next {
+      margin-right: -140px;
+    }
+
+    .college {
+      max-width: 1500px;
+      margin: auto;
+    }
+
+    .container1 {
+      max-width: 480px;
+      justify-content: center;
+    }
+
+    /* /media queries */
+    @media (min-width:1380px) and (max-width:1900px) {
+      .box-container {
+        margin: auto;
+        max-width: 1400px;
+        align-items: center;
+      }
+
+      .container1 {
+        position: relative;
+        right: -70px;
+      }
+
+      .caption1 h1 {
+        margin-left: 418px;
+      }
+      footer {
+        margin: auto;
+        max-width: 1500px;
+        align-items: center;
+      }
+      .btn{
+      position: relative;
+      left: 630px;
+      top: 130px;
+      
+    }
+    }
+
+    @media (min-width:1900px) and (max-width:4000px) {
+      .box-container {
+        margin: auto;
+        max-width: 1500px;
+        align-items: center;
+        padding: 0px 160px;
+      }
+
+      .container1 {
+        position: relative;
+        right: 30px;
+      }
+
+      .caption1 h1 {
+        margin-left: 308px;
+      }
+      footer {
+        margin: auto;
+        max-width: 1500px;
+        align-items: center;
+      }
+    }
+
+    @media (min-width:480px) and (max-width:1300px) {
+      .box-container {
+        margin: auto;
+        min-width: 1500px;
+        align-items: flex-start;
+        padding: 0px 130px;
+      }
+
+      .container1 {
+        position: relative;
+        right: 30px;
+      }
+
+      .caption1 h1 {
+        display: inline-block;
+      }
+
+      footer {
+        margin: auto;
+        min-width: 1500px;
+        align-items: center;
+
+      }
+    }
+    /* //////////////////////////// submit pop up ////////////////////////////// */
+    .modal {
+            display: none;
+            position: fixed;
+            z-index: 1;
+            padding-top: 300px;
+            left: 0;
+            top: 0;
+            width: 120%;
+            height: 1300px;
+            backdrop-filter: blur(6px);
+            background-color: rgba(0, 0, 0, 0.1);
+        }
+
+
+        .modal-content {
+            width: 400px;
+            height: 350px;
+            background-color: #2E2E2E;
+            transition: 0.6s;
+            position: relative;
+            left: 500px;
+            top: -100px;
+        }   .close {
+            position: relative;
+            left: 370px;
+            cursor: pointer;
+            top: 10px;
+        }
+
+        .close:hover,
+        .close:focus {
+            color: grey;
+            text-decoration: none;
+            cursor: pointer;
+        }.pht {
+
+height: 150px;
+width: 200px;
+background-color: white;
+position: absolute;
+margin-top: 10px;
+margin-left: 100px;
+}.note {
+
+margin-top: 20px;
+color: white;
+/* margin-left: 13px; */
+text-align: center;
+
+}
+
+.note h4 {
+font-size: 14px;
+/* text-align: center; */
+color: #8A8A8A;
+}
+
+.butn button {
+height: 40px;
+width: 300px;
+margin-left: 100px;
+border-radius: 10px;
+background-color: #171717;
+color: white;
+border: none;
+position: relative;
+top: 280px;
+left: -50px;
+}
+.butn button {
+            height: 40px;
+            width: 300px;
+            margin-left: 100px;
+            border-radius: 10px;
+            background-color: #171717;
+            color: white;
+            border: none;
+            position: relative;
+            top: 280px;
+            left: -50px;
+        }   .ct-footer-list>li .ct-footer-list-header {
+            font-family: 'Open Sans Condensed', sans-serif;
+            color: white;
+            font-size: 30px;
+            margin-top: 50px;
+
+        }
+
+        .ct-footer-list>li ul {
+            list-style: none;
+            padding-left: 0;
+            color: white;
+            padding-top: 5px;
+        }
+
+        .inputbox {
+            height: 40px;
+            width: 220px;
+            background-color: #2e2e2e;
+            border-radius: 10px;
+            border: none;
+            padding-left: 5px;
+            color: white;
+        }
+
+        .inputb {
+            height: 60px;
+            width: 220px;
+            background-color: #2e2e2e;
+            border-radius: 10px;
+            border: none;
+            padding-left: 5px;
+        }
+
+        .btns {
+            height: 40px;
+            width: 220px;
+            background-color: #171717;
+            border: 1px solid white;
+            color: white;
+            border-radius: 5px;
+
+        }
+
+        .f1 {
+            margin-left: -30px;
+        }
+
+        .site-link a {
+            color: white;
+            text-decoration: none;
+        }
+        .pop{
+           position: relative;
+          top: 400px;
+        }
+/* //////////////////////////////////////////////////////////////////////////////////// */
+  </style>
+
+</head>
+
+<body>
+  <div class="main">
+    <nav class="navbar">
+      <!-- LOGO -->
+      <div class="logo"><a href="index.html"> <img class="img" src="new images/logo.png"></a></div>
+      <!-- NAVIGATION MENU -->
+      <ul class="nav-links">
+        <!-- USING CHECKBOX HACK -->
+        <input type="checkbox" id="checkbox_toggle" />
+        <label for="checkbox_toggle" class="hamburger">&#9776;</label>
+        <!-- NAVIGATION MENUS -->
+        <div class="menu" style="font-size: 18px;  font-family: latoBold; ">
+          <li><a href="ourservice5.html">Service</a></li>
+          <li><a href="work1.html">Work</a></li>
+          <li class="services">
+            <a href="Blog.html">Blog</a>
+            <!-- DROPDOWN MENU -->
+            <ul class="dropdown">
+            </ul>
+          </li>
+          <li><a href="aboutus1.html">About Us</a></li>
+          <li><a href="ContactUs.html">Contact Us</a></li>
+        </div>
+      </ul>
+  </div>
+  <div class="box-container">
+    <div class="college">
+      <div class="container1">
+        <div class="heading">
+          <h1 class="txt">Hello</h1>
+        </div>
+        <div class="overlay">
+          <div class="heading2">
+            <h1 class="txt2">
+              नमस्ते
+            </h1>
+          </div>
+        </div>
+      </div>
+
+      <div class="caption">
+        <h2>Welcome to ExperientialEtc</h2>
+        <h3>We at ExperientialEtc are a bunch of creative geniuses.</h3>
+
+      </div>
+      <div class="Img">
+        <!-- <center> <img alt="Experientialetc" class="img2" src="new images/image.gif" width="10%"></a> </center>
+        <img alt="Experientialetc" class="img1" src="./new images/arrow.png"></a> -->
+      </div>
+      <div class="btn">
+        <button style="height: 40px;width:140px;background:transparent;  color: white; border: 2px solid  white ;border-radius: 15px;">Explore</button>
+      </div>
+
+      <div class="who" id="down">
+        <div class="wleft">
+          <video src="./new images/Question Mark Video.mp4" control autoplay loop muted height="500px"
+            style="margin-top :50px; margin-left:-100px;"></video>
+
+          <!-- <div class="btn"> -->
+          <!-- /////////////////////////////////////// -->
+        </div>
+        <div class="wright">
+          <div class="caption1">
+            <h1 style="font-family: latoBold; ">Who are we?</h1>
+            <p style="font-family: latoRegular;">ExperientialEtc is a 360 degree activation agency which is disprutingthe way traditional
+              activations
+              have been done by integrating latest,cutting edge & Futuristic technology in its most simple
+              form to
+              create jaw dropping experriences</p>
+
+          </div>
+        </div>
+      </div>
+
+
+      <div class="what">
+        <div class="wleft">
+          <div class="caption2">
+            <h1 style="font-family: latoBold;  ">What we do ?</h1>
+            <p style="font-family: latoRegular;" >Producing brand marketing solutions using augmented reality,virtual reality and holographic
+              techonolgies assisting companies in developing creative strategies to generate a better
+              vision for
+              adversting and promoting their service
+          </div>
+        </div>
+        <div class="wright1">
+          <div><img class="img3" src="new images/Mask Group 4.png" /></div>
+<!-- 
+          <div><img class="img3" src="new images/image.gif" /></div>
+          <div><img class="img4" src="new images/logo1.png" /></div> -->
+
+        </div>
+
+      </div>
+      <h2 class="c1">Our Clients</h2>
+      <div class="clint-block">
+        <div class="clint-slider">
+          <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+            <div class="carousel-inner">
+              <div class="carousel-item active">
+                <img class="d-block w-100" style="height:500PX;width:500px;" src="./new images/Group 7449.png"
+                  alt="First slide">
+              </div>
+              <div class="carousel-item">
+                <img class="d-block w-100" style="height:500PX;width:500px;" src="./new images/Group 7451.png"
+                  alt="Second slide">
+              </div>
+              <div class="carousel-item">
+                <img class="d-block w-100" style="height:500PX;width:500px;" src="./new images/Group 7452.png"
+                  alt="Third slide">
+              </div>
+              <div class="carousel-item">
+                <img class="d-block w-105" style="height: 400PX;width: 100%;margin-top:25px;margin-left:0px;;"
+                  src="./new images/Group 7453.png" alt="fourth slide">
+              </div>
+            </div>
+            <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="sr-only">Previous</span>
+            </a>
+            <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="sr-only">Next</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- footer -->
+  <footer>
+    <div class="content">
+      <div class="left box">
+        <div class="upper">
+          <div class="topic"><a href="index.html"><img src="new images/logo.png"></a></div>
+          <p style="font-family: latoRegular;">Unit no.3B,Goldline business<br>Center,opposite cafe coffee day,New<br>LInk Road Malad West,Mumbai 400064
+          </p>
+          <div class="media-icons">
+            <a href="#"><i class="fab fa-facebook-f"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-youtube"></i></a>
+            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+          </div>
+          <div class="bottom">
+            <p  style="font-family: latoRegular;">Copyright@2021 by ExperientialEtc</p>
+          </div>
+        </div>
+        <div class="lower">
+        </div>
+      </div>
+      <div class="middle box">
+        <div class="topic" style="font-family: latoBold;">Career</div>
+        <div><a href="career5.html" style="font-family: latoRegular;">Available jobs</a></div>
+      </div>
+      <div class="middle box"  style="font-family: latoRegular;">
+        <div class="topic" style="font-family: latoBold;">Quick Links</div>
+        <div><a href="aboutus1.html">About us</a></div>
+        <div><a href="#">Newsletter</a></div>
+        <div><a href="ourservice5.html">Service</a></div>
+        <div><a href="Blog.html">Blog</a></div>
+        <div><a href="#">FAQ</a></div>
+      </div>
+      <div class="right box">
+        <div class="topic"style="font-family: latoBold;">Drop us a line</div>
+        <form action="#">
+          <input class="inp1" type="text" placeholder="Name">
+          <input class="inp2" type="text" placeholder="Your email address">
+          <input style="height: 100px;" class="inp3" type="text" placeholder="Leave a message">
+          <input  id="myButton" class="btns" type="submit" name="" value="Send" style="font-family: latoBold;">
+      </div> 
+      </form>
+    </div>
+    </div>
+    <div class="pop">
+      <div id="myModal" class="modal">
+          <div class="modal-content">
+              <span class="close">&times;</span>
+              <div class="pht">
+                  <img style="height:150px;width:200px;background-color:#171717" src="new images/Star.png"
+                      alt="">
+                  <div class="note">
+                      <h4 style="font-family: latoLight;"> Your Request to go beyond the etc has been received. <br>Our team will soon
+                          contact you.</h4>
+                  </div>
+              </div>
+              <div class="butn">
+                  <button style="font-family: latoBold;">Explore Services</button>
+              </div>
+          </div>
+      </div>
+    </div>
+  </footer>
+  <!-- ///// -->
+
+
+
+
+  <!-- for down arrow but stil not working  <script>
+    $(function () {
+      $('.Img1').click(function () {
+        $('html, body').animate({ scrollTop: $('#down').offset().top }, 'slow');
+        return false;
+      });
+    });
+
+    $(function () {
+      $('.scroll-btn-tech').click(function () {
+        $('html, body').animate({ scrollTop: $('.our-work').offset().top }, 'slow');
+        return false;
+      });
+    }); -->
+    <script>
+    ////////////////////////////for popuop/////////////////
+    var modal = document.getElementById("myModal");
+
+var btn = document.getElementById("myButton");
+
+var span = document.getElementsByClassName("close")[0];
+btn.onclick = function () {
+    modal.style.display = "block";
+}
+span.onclick = function () {
+    modal.style.display = "none";
+}
+window.onclick = function (event) {
+    if (event.target == modal) {
+        modal.style.display = "none";
+    }
+}
+  </script>
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+    integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js"
+    integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"
+    integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+    crossorigin="anonymous"></script>
+
+
+
+</body>
+
+</html>
