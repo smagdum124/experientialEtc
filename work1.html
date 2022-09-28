@@ -1,0 +1,793 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <style>
+         * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: black;
+            width: 100%;
+            font-family: Lato, Helvetica, sans-serif;
+
+
+        }
+
+        a {
+        text-decoration: none;
+    }
+
+    li {
+        list-style: none;
+    }
+
+    .navbar {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 20px;
+        background-color: Black;
+        color: #fff;
+        overflow: hidden;
+        position: fixed;
+        width: 100%;
+        top: 0;
+        z-index: 99;
+
+    }
+
+    .nav-links a {
+        color: #fff;
+    }
+
+    /* LOGO */
+
+    /* NAVBAR MENU */
+    .menu {
+        display: flex;
+        gap: 1em;
+        font-size: 18px;
+    }
+
+    .menu li:hover {
+        /* background-color: #4c9e9e; */
+        border-radius: 5px;
+        transition: 0.3s ease;
+        list-style: none;
+        text-decoration: none;
+    }
+
+    .menu li {
+        padding: 5px 14px;
+    }
+
+    /* DROPDOWN MENU */
+    .services {
+        position: relative;
+    }
+
+    .dropdown {
+        /* background-color: rgb(1, 139, 139); */
+        padding: 1em 0;
+        position: absolute;
+        /*WITH RESPECT TO PARENT*/
+        display: none;
+        border-radius: 8px;
+        top: 35px;
+    }
+
+    .dropdown li+li {
+        margin-top: 10px;
+    }
+
+    .dropdown li {
+        padding: 0.5em 1em;
+        width: 8em;
+        text-align: center;
+    }
+
+    .dropdown li:hover {
+        /* background-color: #4c9e9e; */
+    }
+
+    .services:hover .dropdown {
+        display: block;
+    }
+
+    input[type=checkbox] {
+        display: none;
+    }
+
+    /*HAMBURGER MENU*/
+    .hamburger {
+        display: none;
+        font-size: 24px;
+        user-select: none;
+    }
+
+    /* APPLYING MEDIA QUERIES */
+    @media (max-width: 768px) {
+        a {
+            text-decoration: none;
+        }
+
+        li {
+            list-style: none;
+        }
+
+        .menu {
+            display: none;
+            position: fixed;
+            background-color: black;
+            right: 0;
+            left: 0;
+
+            height: 100%;
+            text-align: center;
+
+        }
+
+        .menu li:hover {
+            display: inline-block;
+            transition: 0.3s ease;
+        }
+
+        .menu li+li {
+            margin-top: 12px;
+        }
+
+        input[type=checkbox]:checked~.menu {
+            display: block;
+        }
+
+        .hamburger {
+            display: block;
+        }
+
+        .dropdown {
+            left: 50%;
+            top: 30px;
+            transform: translateX(35%);
+        }
+
+        .dropdown li:hover {
+            /* background-color: #4c9e9e; */
+        }
+    }
+        /* ////////////////////////////navbar end////////////////////////////////////////// */
+        .box {
+            width: auto;
+            position: relative;
+            margin-top: -300px !important;
+            /* margin-left: -50px; */
+        }
+
+
+        /* ///////// hover css///////////// */
+        .img-wrp:hover .overlay {
+            opacity: 0.8;
+        }
+
+        .img-wrp {
+            width: 500px !important;
+            margin-left: 145px !important;
+            margin-top: 10px !important;
+            position: relative;
+
+        }
+
+        .img-wrp img {
+            width: 500px !important;
+        }
+
+        .img-wrp2:hover .overlay2 {
+            opacity: 0.8;
+        }
+
+        .img-wrp2 {
+            width: 500px !important;
+            margin-left: 130px !important;
+            margin-top: -50px !important;
+            position: relative;
+
+        }
+
+        .img-wrp2 img {
+            width: 500px !important;
+        }
+
+        .img-wrp3:hover .overlay3 {
+            opacity: 0.8;
+        }
+
+        .img-wrp3 {
+            width: 500px !important;
+            margin-left: 145px !important;
+            margin-top: 10px !important;
+            position: relative;
+
+        }
+
+        .img-wrp6 img {
+            width: 500px !important;
+        }
+        .img-wrp6:hover .overlay6 {
+            opacity: 0.8;
+        }
+
+        .img-wrp6 {
+            width: 500px !important;
+            margin-left: 680px !important;
+            margin-top: 10px !important;
+            position: relative;
+
+        }
+
+        .img-wrp6 img {
+            width: 500px !important;
+        }
+
+        .img-wrp4:hover .overlay3 {
+            opacity: 0.8;
+        }
+
+        .img-wrp4 {
+            width: 500px !important;
+            margin-left: 680px !important;
+            margin-top: -300px !important;
+            position: relative;
+
+        }
+
+        .img-wrp4 img {
+            width: 500px !important;
+        }
+
+        .img-wrp5:hover .overlay3 {
+            opacity: 0.8;
+        }
+
+        .img-wrp5 {
+            width: 500px !important;
+            margin-left: 680px !important;
+            margin-top: -540px !important;
+            position: relative;
+
+        }
+
+        .img-wrp5 img {
+            width: 500px !important;
+        }
+
+
+        .overlay {
+            position: relative;
+            top: 0;
+            bottom: 0;
+            left: 210px;
+            right: 0;
+            opacity: 0;
+            transition: .5s ease;
+        }
+
+        .overlay2 {
+            position: relative;
+            top: 0;
+            bottom: 0;
+            left: 760px;
+            right: 0;
+            opacity: 0;
+            transition: .5s ease;
+        }
+
+        .overlay3 {
+            position: relative;
+            top: 0;
+            bottom: 0;
+            left: 210px;
+            right: 0;
+            opacity: 0;
+            transition: .5s ease;
+        }
+        .overlay6 {
+            position: relative;
+            top: 0;
+            bottom: 0;
+            left: 210px;
+            right: 0;
+            opacity: 0;
+            transition: .5s ease;
+        }
+
+        .img-wrp2:hover .overlay2 {
+            opacity: 0.8;
+        }
+
+        .text {
+            color: white;
+            font-size: 15px;
+            position: absolute;
+            left: 40px;
+            top: -280px;
+            height: 560px;
+            width: 500px;
+            background-color: black;
+            -webkit-transform: translate(-50%, -50%);
+            -ms-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
+            /* text-align: center; */
+            padding: 0px 40px 0px 40px;
+            border-radius: 5px;
+        }
+
+        .text2 {
+            color: white;
+            font-size: 15px;
+            position: absolute;
+            left: 40px;
+            top: -154px;
+            height: 310px;
+            width: 500px;
+            background-color: black;
+            -webkit-transform: translate(-50%, -50%);
+            -ms-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
+            /* text-align: center; */
+            padding: 0px 40px 0px 40px;
+            border-radius: 5px;
+        }
+
+        /* /////////////hover css//////////////////////// */
+        /* /////////////////////////////////////////////////////////////////// */
+       
+        /* Main content */
+        .container {
+            position: relative;
+            width: 5%;
+            margin-right: 850px;
+            margin-top: 100px;
+            cursor: context-menu;
+        }
+
+        .heading {
+            position: absolute;
+            left: -5px;
+            top: 220px;
+
+        }
+
+        .heading1 {
+            position: relative;
+            left: -5px;
+            top: 220px;
+            z-index: 1
+        }
+
+        .hvrimg {
+            position: relative;
+            right: -15px;
+        }
+
+        .txt {
+            color: white;
+            font-size: 100px;
+            font-weight: bold;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+        }
+
+
+        .row {
+            display: -ms-flexbox;
+            /* IE10 */
+            display: flex;
+            -ms-flex-wrap: wrap;
+            /* IE10 */
+            flex-wrap: wrap;
+            padding: 0 4px;
+            margin-top: 100px;
+
+        }
+
+        .container {
+            position: relative;
+            width: 5%;
+            /* margin-right: 850px; */
+            margin-left: 450px;
+            margin-top: 100px;
+            cursor: context-menu;
+        }
+
+        .overlays {
+            position: relative;
+            top: -500px;
+            bottom: 0;
+            left: -15px;
+            right: 0;
+            opacity: 0;
+            transition: .5s ease;
+            cursor: context-menu;
+        }
+
+
+        .container:hover .overlays {
+            opacity: 1;
+        }
+
+        .heading {
+            position: absolute;
+            left: -20px;
+            top: 220px;
+
+        }
+
+        .heading1 {
+            position: absolute;
+            left: -5px;
+            top: 218px;
+            z-index: 1
+        }
+
+        .hvrimg {
+            position: relative;
+            right: -15px;
+        }
+
+        /* //////////////////////////////////////////////////////////////////////////////////////// */
+        @media (min-width:480px) and (max-width:1300px) {
+            .box-container {
+                min-width: 1300px;
+                align-items: center;
+                margin: auto;
+            }
+            .box{
+                padding: 0px 90px;
+            }
+        }
+        @media (min-width:1400px) and (max-width:5000px) {
+            .box-container {
+                max-width: 1300px;
+                align-items: center;
+                margin: auto;
+            }
+            .box{
+                padding: 0px 90px;
+            }
+        }
+
+        /* /////////////////////////////////////////////////////////////////// */
+    </style>
+
+    <body>
+        <div class="main">
+            <nav class="navbar">
+                <!-- LOGO -->
+                <div class="logo"><a href="index.html"> <img class="img" src="new images/logo.png"></a></div>
+                <!-- NAVIGATION MENU -->
+                <ul class="nav-links">
+                    <!-- USING CHECKBOX HACK -->
+                    <input type="checkbox" id="checkbox_toggle" />
+                    <label for="checkbox_toggle" class="hamburger">&#9776;</label>
+                    <!-- NAVIGATION MENUS -->
+                    <div class="menu" style="font-size: 18px;    font-weight: bold;">
+                        <li><a href="ourservice5.html">Service</a></li>
+                        <li><a href="work1.html">Work</a></li>
+                        <li class="services">
+                            <a href="/front.html">Blog</a>
+                            <!-- DROPDOWN MENU -->
+                            <ul class="dropdown">
+                            </ul>
+                        </li>
+                        <li><a href="aboutus1.html">About Us</a></li>
+                        <li><a href="ContactUs.html">Contact Us</a></li>
+                    </div>
+                </ul>
+        </div>
+        <div class="box-container">
+            <div class="container">
+                <div class="heading">
+                    <h1 class="txt">Portfolio</h1>
+                </div>
+                <img src="new images/logo2.png" style="height: 500px; width:500px;" alt="">
+                <div class="overlays">
+                    <div class="heading1">
+                        <h1 class="txt">Portfolio</h1>
+                    </div>
+                    <img class="hvrimg" src="new images/logo3.png" style="height: 500px; width:500px;" alt="">
+                </div>
+            </div>
+            <div class="box">
+
+                <div class="img-wrp">
+                    <img src="new images/img2.jpeg" style="height:550px;width:500px;border-radius: 5px;" alt="">
+
+                    <div class="overlay">
+                        <a href="Hyundai.html">
+                            <div class="text">
+                                <div class="client">
+                                    <h1 style="font-size: 35px;font-weight:bold;padding:25px 30px;text-align: center;">
+                                        Client Name-A
+                                    </h1>
+                                </div> &#8226; Lorem ipsum dolor sit amet consectetur, adipisicing elit. Porro, cum
+                                unde <br>
+                                &#8226; temporibus qui sint natus harum quo soluta quae rerum magnam! Quidem,
+                                voluptates!
+                                Necessitatibus <br>
+                                &#8226; cum impedit animi aspernatur quae in?
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <div class="img-wrp2">
+                    <img src="new images/img2.jpeg"
+                        style="height:550px;width:500px;border-radius: 5px;margin-left: 550px;margin-top:-500px;"
+                        alt="">
+
+                    <div class="overlay2">
+                        <a href="Hyundai.html">
+                            <div class="text">
+                                <div class="client">
+                                    <h1 style="font-size: 35px;font-weight:bold;padding:25px 30px;text-align: center;margin-top: -10px;">
+                                        Client Name-B
+                                    </h1>
+                                </div> &#8226; Lorem ipsum dolor sit amet consectetur, adipisicing elit. Porro, cum
+                                unde <br>
+                                &#8226; temporibus qui sint natus harum quo soluta quae rerum magnam! Quidem,
+                                voluptates!
+                                Necessitatibus <br>
+                                &#8226; cum impedit animi aspernatur quae in?
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <div class="img-wrp">
+                    <img src="new images/img2.jpeg" style="height:550px;width:500px;border-radius: 5px;" alt="">
+
+                    <div class="overlay">
+                        <a href="Hyundai.html">
+                            <div class="text">
+                                <div class="client">
+                                    <h1 style="font-size: 35px;font-weight:bold;padding:25px 30px;text-align: center;">
+                                        Client Name-C
+                                    </h1>
+                                </div> &#8226; Lorem ipsum dolor sit amet consectetur, adipisicing elit. Porro, cum
+                                unde <br>
+                                &#8226; temporibus qui sint natus harum quo soluta quae rerum magnam! Quidem,
+                                voluptates!
+                                Necessitatibus <br>
+                                &#8226; cum impedit animi aspernatur quae in?
+                            </div>
+                        </a>
+                    </div>
+
+                </div>
+                <div class="img-wrp2">
+                    <img src="new images/img2.jpeg"
+                        style="height:550px;width:500px;border-radius: 5px;margin-left: 550px;margin-top:-500px;"
+                        alt="">
+
+                    <div class="overlay2">
+                        <a href="Hyundai.html">
+                            <div class="text">
+                                <div class="client">
+                                    <h1 style="font-size: 35px;font-weight:bold;padding:25px 30px;text-align: center;">
+                                        Client Name-D
+                                    </h1>
+                                </div> &#8226; Lorem ipsum dolor sit amet consectetur, adipisicing elit. Porro, cum
+                                unde <br>
+                                &#8226; temporibus qui sint natus harum quo soluta quae rerum magnam! Quidem,
+                                voluptates!
+                                Necessitatibus <br>
+                                &#8226; cum impedit animi aspernatur quae in?
+                            </div>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="img-wrp3">
+                    <img src="new images/img2.jpeg" style="height:300px;width:500px;border-radius: 5px;" alt="">
+
+                    <div class="overlay3">
+                        <a href="Hyundai.html">
+                            <div class="text2">
+                                <div class="client">
+                                    <h1 style="font-size: 35px;font-weight:bold;padding:25px 30px;text-align: center;">
+                                        Client Name-E
+                                    </h1>
+                                </div> &#8226; Lorem ipsum dolor sit amet consectetur, adipisicing elit. Porro, cum
+                                unde <br>
+                                &#8226; temporibus qui sint natus harum quo soluta quae rerum magnam! Quidem,
+                                voluptates!
+                                Necessitatibus <br>
+                                &#8226; cum impedit animi aspernatur quae in?
+                            </div>
+                        </a>
+                    </div>
+
+                </div>
+                <div class="img-wrp4">
+                    <img src="new images/img2.jpeg" style="height:300px;width:500px;border-radius: 5px;" alt="">
+
+                    <div class="overlay3">
+                        <a href="Hyundai.html">
+                            <div class="text2">
+                                <div class="client">
+                                    <h1 style="font-size: 35px;font-weight:bold;padding:25px 30px;text-align: center;">
+                                        Client Name-F
+                                    </h1>
+                                </div> &#8226; Lorem ipsum dolor sit amet consectetur, adipisicing elit. Porro, cum
+                                unde <br>
+                                &#8226; temporibus qui sint natus harum quo soluta quae rerum magnam! Quidem,
+                                voluptates!
+                                Necessitatibus <br>
+                                &#8226; cum impedit animi aspernatur quae in?
+                            </div>
+                        </a>
+                    </div>
+
+                </div>
+                <div class="img-wrp">
+                    <img src="new images/img2.jpeg" style="height:550px;width:500px;border-radius: 5px;" alt="">
+
+                    <div class="overlay">
+                        <a href="Hyundai.html">
+                            <div class="text">
+                                <div class="client">
+                                    <h1 style="font-size: 35px;font-weight:bold;padding:25px 30px;text-align: center;">
+                                        Client Name-G
+                                    </h1>
+                                </div> &#8226; Lorem ipsum dolor sit amet consectetur, adipisicing elit. Porro, cum
+                                unde <br>
+                                &#8226; temporibus qui sint natus harum quo soluta quae rerum magnam! Quidem,
+                                voluptates!
+                                Necessitatibus <br>
+                                &#8226; cum impedit animi aspernatur quae in?
+                            </div>
+                        </a>
+                    </div>
+
+                </div>
+                <div class="img-wrp5">
+                    <img src="new images/img2.jpeg" style="height:300px;width:500px;border-radius: 5px;" alt="">
+
+                    <div class="overlay3">
+                        <a href="Hyundai.html">
+                            <div class="text2">
+                                <div class="client">
+                                    <h1 style="font-size: 35px;font-weight:bold;padding:25px 30px;text-align: center;">
+                                        Client Name-H
+                                    </h1>
+                                </div> &#8226; Lorem ipsum dolor sit amet consectetur, adipisicing elit. Porro, cum
+                                unde <br>
+                                &#8226; temporibus qui sint natus harum quo soluta quae rerum magnam! Quidem,
+                                voluptates!
+                                Necessitatibus <br>
+                                &#8226; cum impedit animi aspernatur quae in?
+                            </div>
+                        </a>
+                    </div>
+
+                </div>
+                <div class="img-wrp6">
+                    <img src="new images/img2.jpeg" style="height:300px;width:500px;border-radius: 5px;" alt="">
+
+                    <div class="overlay6">
+                        <a href="Hyundai.html">
+                            <div class="text2">
+                                <div class="client">
+                                    <h1 style="font-size: 35px;font-weight:bold;padding:25px 30px;text-align: center;">
+                                        Client Name-I
+                                    </h1>
+                                </div> &#8226; Lorem ipsum dolor sit amet consectetur, adipisicing elit. Porro, cum
+                                unde <br>
+                                &#8226; temporibus qui sint natus harum quo soluta quae rerum magnam! Quidem,
+                                voluptates!
+                                Necessitatibus <br>
+                                &#8226; cum impedit animi aspernatur quae in?
+                            </div>
+                        </a>
+                    </div>
+
+                </div>
+                <div class="img-wrp">
+                    <img src="new images/img2.jpeg" style="height:550px;width:500px;border-radius: 5px;" alt="">
+
+                    <div class="overlay">
+                        <a href="Hyundai.html">
+                            <div class="text">
+                                <div class="client">
+                                    <h1 style="font-size: 35px;font-weight:bold;padding:25px 30px;text-align: center;">
+                                        Client Name-W
+                                    </h1>
+                                </div> &#8226; Lorem ipsum dolor sit amet consectetur, adipisicing elit. Porro, cum
+                                unde <br>
+                                &#8226; temporibus qui sint natus harum quo soluta quae rerum magnam! Quidem,
+                                voluptates!
+                                Necessitatibus <br>
+                                &#8226; cum impedit animi aspernatur quae in?
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <div class="img-wrp2">
+                    <img src="new images/img2.jpeg"
+                        style="height:550px;width:500px;border-radius: 5px;margin-left: 550px;margin-top:-500px;"
+                        alt="">
+
+                    <div class="overlay2">
+                        <a href="Hyundai.html">
+                            <div class="text">
+                                <div class="client">
+                                    <h1 style="font-size: 35px;font-weight:bold;padding:25px 30px;text-align: center;margin-top: -10px;">
+                                        Client Name-X
+                                    </h1>
+                                </div> &#8226; Lorem ipsum dolor sit amet consectetur, adipisicing elit. Porro, cum
+                                unde <br>
+                                &#8226; temporibus qui sint natus harum quo soluta quae rerum magnam! Quidem,
+                                voluptates!
+                                Necessitatibus <br>
+                                &#8226; cum impedit animi aspernatur quae in?
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <div class="img-wrp">
+                    <img src="new images/img2.jpeg" style="height:550px;width:500px;border-radius: 5px;" alt="">
+
+                    <div class="overlay">
+                        <a href="Hyundai.html">
+                            <div class="text">
+                                <div class="client">
+                                    <h1 style="font-size: 35px;font-weight:bold;padding:25px 30px;text-align: center;">
+                                        Client Name-Y
+                                    </h1>
+                                </div> &#8226; Lorem ipsum dolor sit amet consectetur, adipisicing elit. Porro, cum
+                                unde <br>
+                                &#8226; temporibus qui sint natus harum quo soluta quae rerum magnam! Quidem,
+                                voluptates!
+                                Necessitatibus <br>
+                                &#8226; cum impedit animi aspernatur quae in?
+                            </div>
+                        </a>
+                    </div>
+
+                </div>
+                <div class="img-wrp2">
+                    <img src="new images/img2.jpeg"
+                        style="height:550px;width:500px;border-radius: 5px;margin-left: 550px;margin-top:-500px;"
+                        alt="">
+
+                    <div class="overlay2">
+                        <a href="Hyundai.html">
+                            <div class="text">
+                                <div class="client">
+                                    <h1 style="font-size: 35px;font-weight:bold;padding:25px 30px;text-align: center;">
+                                        Client Name-Z
+                                    </h1>
+                                </div> &#8226; Lorem ipsum dolor sit amet consectetur, adipisicing elit. Porro, cum
+                                unde <br>
+                                &#8226; temporibus qui sint natus harum quo soluta quae rerum magnam! Quidem,
+                                voluptates!
+                                Necessitatibus <br>
+                                &#8226; cum impedit animi aspernatur quae in?
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                </div>
+            </div>
+        </div>
+        <div>footer</div>
+    </body>
+
+</html>
